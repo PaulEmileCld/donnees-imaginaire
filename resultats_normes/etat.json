@@ -1,0 +1,28 @@
+{
+ "lexique383.tsv": {
+  "ok": "http://www.lexique.org/databases/Lexique383/Lexique383.tsv",
+  "taille": 25850780
+ },
+ "bonin2018_concretude_valence_1659": [
+  {
+   "ok": "https://static-content.springer.com/esm/art%3A10.3758%2Fs13428-018-1014-y/MediaObjects/13428_2018_1014_MOESM2_ESM.txt",
+   "taille": 87871
+  },
+  {
+   "ok": "https://static-content.springer.com/esm/art%3A10.3758%2Fs13428-018-1014-y/MediaObjects/13428_2018_1014_MOESM3_ESM.xlsx",
+   "taille": 196892
+  }
+ ],
+ "fancat2020_emotions_10_categories": {
+  "ok": null
+ },
+ "fan2014_normes_affectives": [
+  {
+   "ok": "https://static-content.springer.com/esm/art%3A10.3758%2Fs13428-013-0431-1/MediaObjects/13428_2013_431_MOESM2_ESM.xlsx",
+   "taille": 291576
+  }
+ ],
+ "desrochers2009_imagerie_3600": {
+  "ok": null
+ }
+}
