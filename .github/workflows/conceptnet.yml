@@ -5,11 +5,11 @@ on:
   workflow_dispatch:
 permissions:
   contents: write
-concurrency: { group: conceptnet, cancel-in-progress: false }
+concurrency: { group: conceptnet, cancel-in-progress: true }
 jobs:
   conceptnet:
     runs-on: ubuntu-latest
-    timeout-minutes: 120
+    timeout-minutes: 330
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
