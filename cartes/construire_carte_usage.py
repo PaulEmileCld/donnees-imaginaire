@@ -5,7 +5,9 @@ R='/home/claude/donnees-imaginaire/'; t0=time.time()
 info={r['Id']:r for r in csv.DictReader(open(R+'resultats_usage/noeuds.csv',encoding='utf-8'))}
 names=sorted(info); ix={w:i for i,w in enumerate(names)}; n=len(names)
 rows,cols,vals=[],[],[]
-for r in csv.reader(open(R+'resultats_usage/liens.csv',encoding='utf-8')):
+import gzip, os
+fichier=R+'resultats_usage/liens.csv.gz' if os.path.exists(R+'resultats_usage/liens.csv.gz') else R+'resultats_usage/liens.csv'
+for r in csv.reader(gzip.open(fichier,'rt',encoding='utf-8') if fichier.endswith('.gz') else open(fichier,encoding='utf-8')):
     if r[0]=='Source': continue
     a,b=ix.get(r[0]),ix.get(r[1])
     if a is None or b is None or a==b: continue
