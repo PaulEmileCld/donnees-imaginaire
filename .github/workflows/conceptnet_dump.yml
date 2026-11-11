@@ -1,0 +1,28 @@
+name: ConceptNet complet (fichier entier)
+on:
+  push:
+    paths: ['collecte/conceptnet_dump.py', '.github/workflows/conceptnet_dump.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  extraire:
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - name: Télécharger ConceptNet 5.7 (environ 475 Mo) et Numberbatch (environ 1,2 Go)
+        run: |
+          curl -fL --retry 5 --retry-delay 20 -o /tmp/assertions.csv.gz https://s3.amazonaws.com/conceptnet/downloads/2019/edges/conceptnet-assertions-5.7.0.csv.gz
+          curl -fL --retry 5 --retry-delay 20 -o /tmp/numberbatch.txt.gz https://conceptnet.s3.amazonaws.com/downloads/2019/numberbatch/numberbatch-19.08.txt.gz || echo "Numberbatch indisponible"
+          ls -la /tmp/*.gz
+      - run: python collecte/conceptnet_dump.py /tmp/assertions.csv.gz /tmp/numberbatch.txt.gz
+      - name: Enregistrer
+        if: always()
+        run: |
+          git config user.name "collecte-bot"; git config user.email "actions@users.noreply.github.com"
+          git add resultats_conceptnet_dump || true
+          git commit -m "ConceptNet complet : $(cat resultats_conceptnet_dump/etat.json 2>/dev/null | tr -d '\n ' | head -c 250)" || echo "Rien"
+          for i in 1 2 3 4 5; do git pull --rebase && git push && break; sleep 11; done
