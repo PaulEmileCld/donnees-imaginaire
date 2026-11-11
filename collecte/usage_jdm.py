@@ -12,10 +12,12 @@ for m in open("collecte/mots_durand.txt", encoding="utf-8").read().split():
     f = acc.get(m) or m.lower()
     infos.setdefault(f, {"mot": f, "rang": "", "categorie": "", "freq_films": "", "freq_livres": "", "oral_ecrit": "", "durand": "1"})
 LISTE = set(infos)
-CACHE = f"{R}/cache.jsonl"; cache = {}
-if os.path.exists(CACHE):
-    for l in open(CACHE, encoding="utf-8"): e = json.loads(l); cache[e["q"]] = e
-fc = open(CACHE, "a", encoding="utf-8")
+import gzip, glob
+cache = {}   # cache.jsonl (les 10 000 premiers) puis cache_2.jsonl.gz (la suite, compressée : limite GitHub de 100 Mo par fichier)
+for fich in sorted(glob.glob(f"{R}/cache*.jsonl*")):
+    for l in (gzip.open(fich, "rt", encoding="utf-8") if fich.endswith(".gz") else open(fich, encoding="utf-8")):
+        if l.strip(): e = json.loads(l); cache[e["q"]] = e
+fc = gzip.open(f"{R}/cache_2.jsonl.gz", "at", encoding="utf-8")
 BON = re.compile(r"^[a-zàâäçéèêëîïôöùûüÿœæ][a-zàâäçéèêëîïôöùûüÿœæ' -]{1,30}$", re.I)
 def get(nom):
     time.sleep(PAUSE)
@@ -47,19 +49,23 @@ try:
             dehors = [x for x in dehors if BON.match(x[0])]
             dehors.sort(key=lambda x: -x[1])
         e = {"q": nom, "trouve": bool(d), "in": dedans, "out": dehors[:EXTERIEUR]}
-        cache[nom] = e; fc.write(json.dumps(e, ensure_ascii=False) + "\n"); fc.flush()
+        cache[nom] = e; fc.write(json.dumps(e, ensure_ascii=False) + "\n")
 except TimeoutError:
     termine = False
+fc.close()
+# les liens « internes » sont recalculés sur la liste actuelle (un ancien lien « extérieur » peut être devenu interne)
+for e in cache.values():
+    tout = e["in"] + e["out"]; e["in"] = [x for x in tout if x[0] in LISTE]; e["out"] = [x for x in tout if x[0] not in LISTE]
 with open(f"{R}/noeuds.csv", "w", newline="", encoding="utf-8") as f:
     w = csv.writer(f); w.writerow(["Id", "Label", "rang", "categorie", "freq_films", "freq_livres", "oral_ecrit", "durand", "trouve_jdm"])
     for m in LISTE:
         i = infos[m]; w.writerow([m, m, i["rang"], i["categorie"], i["freq_films"], i["freq_livres"], i["oral_ecrit"], i["durand"], int(cache.get(m, {}).get("trouve", False))])
 nb = 0
-with open(f"{R}/liens.csv", "w", newline="", encoding="utf-8") as f:
+with gzip.open(f"{R}/liens.csv.gz", "wt", newline="", encoding="utf-8") as f:
     w = csv.writer(f); w.writerow(["Source", "Target", "Weight", "Type"])
     for m, e in cache.items():
         for c, p in e["in"]: w.writerow([m, c, p, "Directed"]); nb += 1
-with open(f"{R}/liens_exterieurs.csv", "w", newline="", encoding="utf-8") as f:
+with gzip.open(f"{R}/liens_exterieurs.csv.gz", "wt", newline="", encoding="utf-8") as f:
     w = csv.writer(f); w.writerow(["Source", "Target", "Weight"])
     for m, e in cache.items():
         for c, p in e["out"]: w.writerow([m, c, p])

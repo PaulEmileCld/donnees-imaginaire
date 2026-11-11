@@ -25,8 +25,10 @@ for corpus in ["fr-2019", "fr"]:               # on garde le premier corpus qui 
             if s.get("type") == "CASE_INSENSITIVE" or ng.endswith(" (All)") or not any(x.get("ngram", "").endswith(" (All)") for x in d):
                 mot = ng.replace(" (All)", "")
                 for k, v in enumerate(s["timeseries"]): lignes.append([mot, DEBUT + k, v])
-        time.sleep(5)
+        time.sleep(4)
     if lignes: etat["corpus"] = corpus; break
-with open(f"{R}/frequences.csv", "w", newline="", encoding="utf-8") as f:
+import gzip
+ouvrir = (lambda: gzip.open(f"{R}/frequences.csv.gz", "wt", newline="", encoding="utf-8")) if os.environ.get("LISTE") else (lambda: open(f"{R}/frequences.csv", "w", newline="", encoding="utf-8"))
+with ouvrir() as f:
     w = csv.writer(f); w.writerow(["mot", "annee", "frequence_relative"]); w.writerows(lignes)
 etat["mots_trouves"] = len({l[0] for l in lignes}); json.dump(etat, open(f"{R}/etat.json", "w"), indent=1); print(etat)

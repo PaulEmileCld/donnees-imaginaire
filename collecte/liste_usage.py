@@ -1,6 +1,6 @@
 """Liste de départ « par l'usage » : les N mots pleins (noms, verbes, adjectifs) les plus fréquents du français,
 d'après Lexique 3.83. Fréquence = moyenne entre sous-titres de films (oral) et livres (écrit)."""
-N = 10000
+N = 30000
 import csv, json
 lem = {}
 for r in csv.DictReader(open("resultats_normes/brut/lexique383.tsv", encoding="utf-8"), delimiter="\t"):
@@ -11,9 +11,11 @@ for r in csv.DictReader(open("resultats_normes/brut/lexique383.tsv", encoding="u
     e["films"] = max(e["films"], f); e["livres"] = max(e["livres"], l)
 acc = json.load(open("collecte/accents.json", encoding="utf-8"))
 durand = {(acc.get(m) or m.lower()) for m in open("collecte/mots_durand.txt", encoding="utf-8").read().split()}
-ok = {m: e for m, e in lem.items() if e["films"] >= 0.3 and e["livres"] >= 0.3 and len(m) > 2 and "sous-titr" not in m}
-# un mot présent dans un seul des deux corpus est presque toujours un nom propre, une coquille ou un artefact de sous-titres
-rang = sorted(ok.items(), key=lambda x: -(x[1]["films"] + x[1]["livres"]))[:N]
+strict = {m: e for m, e in lem.items() if e["films"] >= 0.3 and e["livres"] >= 0.3 and len(m) > 2 and "sous-titr" not in m}
+# un mot présent dans un seul des deux corpus est souvent un nom propre ou une coquille : on les met après les autres
+large = {m: e for m, e in lem.items() if m not in strict and e["films"] + e["livres"] > 0 and len(m) > 2 and "sous-titr" not in m}
+f = lambda x: -(x[1]["films"] + x[1]["livres"])
+rang = (sorted(strict.items(), key=f) + sorted(large.items(), key=f))[:N]
 with open("collecte/mots_usage.csv", "w", newline="", encoding="utf-8") as f:
     w = csv.writer(f); w.writerow(["mot", "rang", "categorie", "freq_films", "freq_livres", "oral_ecrit", "durand"])
     for i, (m, e) in enumerate(rang, 1):
@@ -21,3 +23,4 @@ with open("collecte/mots_usage.csv", "w", newline="", encoding="utf-8") as f:
         w.writerow([m, i, cat, round(e["films"], 2), round(e["livres"], 2), round((e["films"] - e["livres"]) / t, 3) if t else 0, int(m in durand)])
 open("collecte/mots_usage.txt", "w", encoding="utf-8").write("\n".join(m for m, _ in rang))
 print(len(rang), "mots ;", sum(m in durand for m, _ in rang), "mots de Durand dedans")
+open("collecte/mots_usage_suite.txt", "w", encoding="utf-8").write("\n".join(m for m, _ in rang[10000:]))
