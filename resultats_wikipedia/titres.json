@@ -1,0 +1,3050 @@
+{
+ "AGNEAU": {
+  "forme": "agneau",
+  "titre": "Agneau",
+  "existe": true,
+  "homonymie": false
+ },
+ "ADAM": {
+  "forme": "Adam",
+  "titre": "Adam",
+  "existe": true,
+  "homonymie": false
+ },
+ "AGRICOLE": {
+  "forme": "agricole",
+  "titre": "Agricole",
+  "existe": true,
+  "homonymie": true
+ },
+ "AIGLE": {
+  "forme": "aigle",
+  "titre": "Aigle",
+  "existe": true,
+  "homonymie": false
+ },
+ "AIR": {
+  "forme": "air",
+  "titre": "Air",
+  "existe": true,
+  "homonymie": false
+ },
+ "ALCHIMIE": {
+  "forme": "alchimie",
+  "titre": "Alchimie",
+  "existe": true,
+  "homonymie": false
+ },
+ "ALIMENT": {
+  "forme": "aliment",
+  "titre": "Nourriture",
+  "existe": true,
+  "homonymie": false
+ },
+ "ALLAH": {
+  "forme": "Allah",
+  "titre": "Allah",
+  "existe": true,
+  "homonymie": false
+ },
+ "AMAZONE": {
+  "forme": "amazone",
+  "titre": "Amazone",
+  "existe": true,
+  "homonymie": true
+ },
+ "ALOUETTE": {
+  "forme": "alouette",
+  "titre": "Alouette",
+  "existe": true,
+  "homonymie": true
+ },
+ "ANDROGYNE": {
+  "forme": "androgyne",
+  "titre": "Androgynie",
+  "existe": true,
+  "homonymie": false
+ },
+ "ANGE": {
+  "forme": "ange",
+  "titre": "Ange",
+  "existe": true,
+  "homonymie": false
+ },
+ "ANIMAL": {
+  "forme": "animal",
+  "titre": "Animal",
+  "existe": true,
+  "homonymie": false
+ },
+ "ANTIPHRASE": {
+  "forme": "antiphrase",
+  "titre": "Antiphrase",
+  "existe": true,
+  "homonymie": false
+ },
+ "ANTITHESE": {
+  "forme": "antithèse",
+  "titre": "Antithèse",
+  "existe": true,
+  "homonymie": false
+ },
+ "ANUS": {
+  "forme": "anus",
+  "titre": "Anus",
+  "existe": true,
+  "homonymie": false
+ },
+ "ARAIGNEE": {
+  "forme": "araignée",
+  "titre": "Araneae",
+  "existe": true,
+  "homonymie": false
+ },
+ "ARBRE": {
+  "forme": "arbre",
+  "titre": "Arbre",
+  "existe": true,
+  "homonymie": false
+ },
+ "ARC": {
+  "forme": "arc",
+  "titre": "Arc",
+  "existe": true,
+  "homonymie": true
+ },
+ "ARCHE": {
+  "forme": "arche",
+  "titre": "Arche",
+  "existe": true,
+  "homonymie": true
+ },
+ "ARME": {
+  "forme": "arme",
+  "titre": "Arme",
+  "existe": true,
+  "homonymie": false
+ },
+ "ARTEMIS": {
+  "forme": "Artémis",
+  "titre": "Artémis",
+  "existe": true,
+  "homonymie": false
+ },
+ "ASCENSION": {
+  "forme": "ascension",
+  "titre": "Ascension",
+  "existe": true,
+  "homonymie": true
+ },
+ "ATHENA": {
+  "forme": "Athéna",
+  "titre": "Athéna",
+  "existe": true,
+  "homonymie": false
+ },
+ "ATLAS": {
+  "forme": "Atlas",
+  "titre": "Atlas",
+  "existe": true,
+  "homonymie": true
+ },
+ "ATOME": {
+  "forme": "atome",
+  "titre": "Atome",
+  "existe": true,
+  "homonymie": false
+ },
+ "AURORE": {
+  "forme": "aurore",
+  "titre": "Aurore",
+  "existe": true,
+  "homonymie": true
+ },
+ "AUTOMOBILE": {
+  "forme": "automobile",
+  "titre": "Automobile",
+  "existe": true,
+  "homonymie": false
+ },
+ "AVALER": {
+  "forme": "avaler",
+  "titre": "Déglutition",
+  "existe": true,
+  "homonymie": false
+ },
+ "AVEUGLE": {
+  "forme": "aveugle",
+  "titre": "Cécité",
+  "existe": true,
+  "homonymie": false
+ },
+ "AVION": {
+  "forme": "avion",
+  "titre": "Avion",
+  "existe": true,
+  "homonymie": false
+ },
+ "AZUR": {
+  "forme": "azur",
+  "titre": "Azur",
+  "existe": true,
+  "homonymie": true
+ },
+ "BACCHUS": {
+  "forme": "Bacchus",
+  "titre": "Bacchus",
+  "existe": true,
+  "homonymie": false
+ },
+ "BAGUE": {
+  "forme": "bague",
+  "titre": "Bague",
+  "existe": true,
+  "homonymie": false
+ },
+ "BAIGNER": {
+  "forme": "baigner",
+  "titre": "Baigner",
+  "existe": false,
+  "homonymie": false
+ },
+ "BAIN": {
+  "forme": "bain",
+  "titre": "Bain",
+  "existe": true,
+  "homonymie": false
+ },
+ "BALEINE": {
+  "forme": "baleine",
+  "titre": "Baleine",
+  "existe": true,
+  "homonymie": false
+ },
+ "BAPTEME": {
+  "forme": "baptême",
+  "titre": "Baptême",
+  "existe": true,
+  "homonymie": false
+ },
+ "BARATTE": {
+  "forme": "baratte",
+  "titre": "Baratte",
+  "existe": true,
+  "homonymie": false
+ },
+ "BARQUE": {
+  "forme": "barque",
+  "titre": "Barque",
+  "existe": true,
+  "homonymie": false
+ },
+ "BATON": {
+  "forme": "bâton",
+  "titre": "Bâton",
+  "existe": true,
+  "homonymie": false
+ },
+ "BELIER": {
+  "forme": "bélier",
+  "titre": "Bélier",
+  "existe": true,
+  "homonymie": false
+ },
+ "BERCEAU": {
+  "forme": "berceau",
+  "titre": "Berceau",
+  "existe": true,
+  "homonymie": false
+ },
+ "BESTIAIRE": {
+  "forme": "bestiaire",
+  "titre": "Bestiaire",
+  "existe": true,
+  "homonymie": false
+ },
+ "BEUGLEMENT": {
+  "forme": "beuglement",
+  "titre": "Liste de cris d'animaux",
+  "existe": true,
+  "homonymie": false
+ },
+ "BEUVERIE": {
+  "forme": "beuverie",
+  "titre": "Binge drinking",
+  "existe": true,
+  "homonymie": false
+ },
+ "BIJOUX": {
+  "forme": "bijoux",
+  "titre": "Bijou",
+  "existe": true,
+  "homonymie": false
+ },
+ "BISON": {
+  "forme": "bison",
+  "titre": "Bison",
+  "existe": true,
+  "homonymie": false
+ },
+ "BLANC": {
+  "forme": "blanc",
+  "titre": "Blanc",
+  "existe": true,
+  "homonymie": false
+ },
+ "BLANCHEUR": {
+  "forme": "blancheur",
+  "titre": "Blancheur",
+  "existe": true,
+  "homonymie": true
+ },
+ "BLANCHE": {
+  "forme": "blanche",
+  "titre": "Blanche",
+  "existe": true,
+  "homonymie": true
+ },
+ "BLEU": {
+  "forme": "bleu",
+  "titre": "Bleu",
+  "existe": true,
+  "homonymie": false
+ },
+ "BLOND": {
+  "forme": "blond",
+  "titre": "Blond",
+  "existe": true,
+  "homonymie": true
+ },
+ "BOIS": {
+  "forme": "bois",
+  "titre": "Bois",
+  "existe": true,
+  "homonymie": false
+ },
+ "BOISSON": {
+  "forme": "boisson",
+  "titre": "Boisson",
+  "existe": true,
+  "homonymie": false
+ },
+ "BONNET": {
+  "forme": "bonnet",
+  "titre": "Bonnet",
+  "existe": true,
+  "homonymie": true
+ },
+ "BORGNE": {
+  "forme": "borgne",
+  "titre": "Monophtalmie",
+  "existe": true,
+  "homonymie": false
+ },
+ "BOUC": {
+  "forme": "bouc",
+  "titre": "Bouc",
+  "existe": true,
+  "homonymie": false
+ },
+ "BOUCHE": {
+  "forme": "bouche",
+  "titre": "Bouche",
+  "existe": true,
+  "homonymie": false
+ },
+ "BRAHMA": {
+  "forme": "Brahma",
+  "titre": "Brahmā",
+  "existe": true,
+  "homonymie": false
+ },
+ "BRAHMAN": {
+  "forme": "brahman",
+  "titre": "Brahman",
+  "existe": true,
+  "homonymie": false
+ },
+ "BREUVAGE": {
+  "forme": "breuvage",
+  "titre": "Breuvage",
+  "existe": true,
+  "homonymie": true
+ },
+ "BRIQUET": {
+  "forme": "briquet",
+  "titre": "Briquet",
+  "existe": true,
+  "homonymie": false
+ },
+ "BRISER": {
+  "forme": "briser",
+  "titre": "Briser",
+  "existe": false,
+  "homonymie": false
+ },
+ "BROCHET": {
+  "forme": "brochet",
+  "titre": "Brochet",
+  "existe": true,
+  "homonymie": false
+ },
+ "BUCHERON": {
+  "forme": "bûcheron",
+  "titre": "Bûcheron",
+  "existe": true,
+  "homonymie": false
+ },
+ "CADUCEE": {
+  "forme": "caducée",
+  "titre": "Caducée",
+  "existe": true,
+  "homonymie": false
+ },
+ "CAIN": {
+  "forme": "Caïn",
+  "titre": "Caïn",
+  "existe": true,
+  "homonymie": false
+ },
+ "CALENDRIER": {
+  "forme": "calendrier",
+  "titre": "Calendrier",
+  "existe": true,
+  "homonymie": false
+ },
+ "CALICE": {
+  "forme": "calice",
+  "titre": "Calice",
+  "existe": true,
+  "homonymie": true
+ },
+ "CALYPSO": {
+  "forme": "Calypso",
+  "titre": "Calypso",
+  "existe": true,
+  "homonymie": false
+ },
+ "CANOT": {
+  "forme": "canot",
+  "titre": "Canot",
+  "existe": true,
+  "homonymie": false
+ },
+ "CARDINAUX": {
+  "forme": "cardinaux",
+  "titre": "Cardinal",
+  "existe": true,
+  "homonymie": true
+ },
+ "CARRE": {
+  "forme": "carré",
+  "titre": "Carré",
+  "existe": true,
+  "homonymie": false
+ },
+ "CATACLYSME": {
+  "forme": "cataclysme",
+  "titre": "Cataclysme",
+  "existe": true,
+  "homonymie": false
+ },
+ "CATAMORPHES": {
+  "forme": "catamorphe",
+  "titre": "Catamorphe",
+  "existe": false,
+  "homonymie": false
+ },
+ "CAVE": {
+  "forme": "cave",
+  "titre": "Cave",
+  "existe": true,
+  "homonymie": true
+ },
+ "CAVERNE": {
+  "forme": "caverne",
+  "titre": "Caverne",
+  "existe": true,
+  "homonymie": false
+ },
+ "CAVERNEUX": {
+  "forme": "caverneux",
+  "titre": "Caverneux",
+  "existe": false,
+  "homonymie": false
+ },
+ "CENTRE": {
+  "forme": "centre",
+  "titre": "Centre",
+  "existe": true,
+  "homonymie": true
+ },
+ "CERBERE": {
+  "forme": "Cerbère",
+  "titre": "Cerbère",
+  "existe": true,
+  "homonymie": false
+ },
+ "CERCLE": {
+  "forme": "cercle",
+  "titre": "Cercle",
+  "existe": true,
+  "homonymie": false
+ },
+ "CERF": {
+  "forme": "cerf",
+  "titre": "Cerf",
+  "existe": true,
+  "homonymie": false
+ },
+ "CHACAL": {
+  "forme": "chacal",
+  "titre": "Chacal",
+  "existe": true,
+  "homonymie": false
+ },
+ "CHAIR": {
+  "forme": "chair",
+  "titre": "Chair",
+  "existe": true,
+  "homonymie": false
+ },
+ "CHALEUR": {
+  "forme": "chaleur",
+  "titre": "Chaleur",
+  "existe": true,
+  "homonymie": true
+ },
+ "CHAMBRE": {
+  "forme": "chambre",
+  "titre": "Chambre",
+  "existe": true,
+  "homonymie": true
+ },
+ "CHANGEMENT": {
+  "forme": "changement",
+  "titre": "Changement",
+  "existe": true,
+  "homonymie": false
+ },
+ "CHAOS": {
+  "forme": "chaos",
+  "titre": "Chaos",
+  "existe": true,
+  "homonymie": true
+ },
+ "CHAPELLE": {
+  "forme": "chapelle",
+  "titre": "Chapelle",
+  "existe": true,
+  "homonymie": false
+ },
+ "CHAR": {
+  "forme": "char",
+  "titre": "Char",
+  "existe": true,
+  "homonymie": false
+ },
+ "CHAUD": {
+  "forme": "chaud",
+  "titre": "Température",
+  "existe": true,
+  "homonymie": false
+ },
+ "CHARIOT": {
+  "forme": "chariot",
+  "titre": "Chariot",
+  "existe": true,
+  "homonymie": false
+ },
+ "CHASSE": {
+  "forme": "chasse",
+  "titre": "Chasse",
+  "existe": true,
+  "homonymie": false
+ },
+ "CHAT": {
+  "forme": "chat",
+  "titre": "Chat",
+  "existe": true,
+  "homonymie": false
+ },
+ "CHATEAU": {
+  "forme": "château",
+  "titre": "Château",
+  "existe": true,
+  "homonymie": false
+ },
+ "CHAUDRON": {
+  "forme": "chaudron",
+  "titre": "Chaudron",
+  "existe": true,
+  "homonymie": true
+ },
+ "CHAUMIERE": {
+  "forme": "chaumière",
+  "titre": "Chaumière",
+  "existe": true,
+  "homonymie": false
+ },
+ "CHEF": {
+  "forme": "chef",
+  "titre": "Chef",
+  "existe": true,
+  "homonymie": true
+ },
+ "CHEVAL": {
+  "forme": "cheval",
+  "titre": "Cheval",
+  "existe": true,
+  "homonymie": false
+ },
+ "COUPE": {
+  "forme": "coupe",
+  "titre": "Coupe",
+  "existe": true,
+  "homonymie": true
+ },
+ "CHEVELURE": {
+  "forme": "chevelure",
+  "titre": "Chevelure",
+  "existe": true,
+  "homonymie": true
+ },
+ "CHEVEUX": {
+  "forme": "cheveux",
+  "titre": "Cheveu",
+  "existe": true,
+  "homonymie": false
+ },
+ "CHIEN": {
+  "forme": "chien",
+  "titre": "Chien",
+  "existe": true,
+  "homonymie": false
+ },
+ "CHIMERE": {
+  "forme": "chimère",
+  "titre": "Chimère",
+  "existe": true,
+  "homonymie": true
+ },
+ "CHOU": {
+  "forme": "chou",
+  "titre": "Chou",
+  "existe": true,
+  "homonymie": true
+ },
+ "CHRIST": {
+  "forme": "Christ",
+  "titre": "Christ",
+  "existe": true,
+  "homonymie": true
+ },
+ "CHRYSALIDE": {
+  "forme": "chrysalide",
+  "titre": "Chrysalide",
+  "existe": true,
+  "homonymie": false
+ },
+ "CHTONIEN": {
+  "forme": "chthonien",
+  "titre": "Divinités grecques chthoniennes",
+  "existe": true,
+  "homonymie": false
+ },
+ "CHUTE": {
+  "forme": "chute",
+  "titre": "Chute",
+  "existe": true,
+  "homonymie": true
+ },
+ "CIEL": {
+  "forme": "ciel",
+  "titre": "Ciel",
+  "existe": true,
+  "homonymie": false
+ },
+ "CIGALE": {
+  "forme": "cigale",
+  "titre": "Cicadidae",
+  "existe": true,
+  "homonymie": false
+ },
+ "CIME": {
+  "forme": "cime",
+  "titre": "Cime",
+  "existe": true,
+  "homonymie": true
+ },
+ "CIRCONSITION": {
+  "forme": "circoncision",
+  "titre": "Circoncision",
+  "existe": true,
+  "homonymie": false
+ },
+ "CLOISON": {
+  "forme": "cloison",
+  "titre": "Cloison",
+  "existe": true,
+  "homonymie": false
+ },
+ "COCTION": {
+  "forme": "coction",
+  "titre": "Coction",
+  "existe": false,
+  "homonymie": false
+ },
+ "COFFRE": {
+  "forme": "coffre",
+  "titre": "Coffre",
+  "existe": true,
+  "homonymie": false
+ },
+ "COIN": {
+  "forme": "coin",
+  "titre": "Coin",
+  "existe": true,
+  "homonymie": true
+ },
+ "COLOMBE": {
+  "forme": "colombe",
+  "titre": "Colombe",
+  "existe": true,
+  "homonymie": false
+ },
+ "CONTENANT": {
+  "forme": "contenant",
+  "titre": "Contenant",
+  "existe": false,
+  "homonymie": false
+ },
+ "CONTENIR": {
+  "forme": "contenir",
+  "titre": "Contenir",
+  "existe": false,
+  "homonymie": false
+ },
+ "COPULATIF": {
+  "forme": "copulatif",
+  "titre": "Copulatif",
+  "existe": false,
+  "homonymie": false
+ },
+ "COQ": {
+  "forme": "coq",
+  "titre": "Coq",
+  "existe": true,
+  "homonymie": false
+ },
+ "COQUE": {
+  "forme": "coque",
+  "titre": "Coque",
+  "existe": true,
+  "homonymie": true
+ },
+ "COQUILLE": {
+  "forme": "coquille",
+  "titre": "Coquille",
+  "existe": true,
+  "homonymie": true
+ },
+ "CORBEAU": {
+  "forme": "corbeau",
+  "titre": "Corbeau",
+  "existe": true,
+  "homonymie": false
+ },
+ "CORNE": {
+  "forme": "corne",
+  "titre": "Corne",
+  "existe": true,
+  "homonymie": true
+ },
+ "COULEUR": {
+  "forme": "couleur",
+  "titre": "Couleur",
+  "existe": true,
+  "homonymie": false
+ },
+ "COULEUVRE": {
+  "forme": "couleuvre",
+  "titre": "Couleuvre",
+  "existe": true,
+  "homonymie": false
+ },
+ "COUPER": {
+  "forme": "couper",
+  "titre": "Coupe",
+  "existe": true,
+  "homonymie": true
+ },
+ "COUTEAU": {
+  "forme": "couteau",
+  "titre": "Couteau",
+  "existe": true,
+  "homonymie": false
+ },
+ "COUVRIR": {
+  "forme": "couvrir",
+  "titre": "Couvrir",
+  "existe": false,
+  "homonymie": false
+ },
+ "CRANE": {
+  "forme": "crâne",
+  "titre": "Crâne",
+  "existe": true,
+  "homonymie": false
+ },
+ "CRAPEAU": {
+  "forme": "crapaud",
+  "titre": "Crapaud",
+  "existe": true,
+  "homonymie": false
+ },
+ "CREUSEMENT": {
+  "forme": "creusement",
+  "titre": "Creusement",
+  "existe": false,
+  "homonymie": false
+ },
+ "CREUX": {
+  "forme": "creux",
+  "titre": "Creux",
+  "existe": true,
+  "homonymie": true
+ },
+ "CRI": {
+  "forme": "cri",
+  "titre": "Cri",
+  "existe": true,
+  "homonymie": true
+ },
+ "CROCODILE": {
+  "forme": "crocodile",
+  "titre": "Crocodile",
+  "existe": true,
+  "homonymie": false
+ },
+ "CROIX": {
+  "forme": "croix",
+  "titre": "Croix",
+  "existe": true,
+  "homonymie": false
+ },
+ "CROQUAGE": {
+  "forme": "croquage",
+  "titre": "Croquage",
+  "existe": false,
+  "homonymie": false
+ },
+ "CROQUE": {
+  "forme": "croque",
+  "titre": "Croque",
+  "existe": true,
+  "homonymie": true
+ },
+ "CRUSTACE": {
+  "forme": "crustacé",
+  "titre": "Crustacés",
+  "existe": true,
+  "homonymie": false
+ },
+ "CUIRASSE": {
+  "forme": "cuirasse",
+  "titre": "Cuirasse",
+  "existe": true,
+  "homonymie": false
+ },
+ "CUIRE": {
+  "forme": "cuire",
+  "titre": "Cuisson",
+  "existe": true,
+  "homonymie": false
+ },
+ "CUIT": {
+  "forme": "cuit",
+  "titre": "Cuisson",
+  "existe": true,
+  "homonymie": false
+ },
+ "CRU": {
+  "forme": "cru",
+  "titre": "Cru",
+  "existe": true,
+  "homonymie": true
+ },
+ "CYCLE": {
+  "forme": "cycle",
+  "titre": "Cycle",
+  "existe": true,
+  "homonymie": true
+ },
+ "CYCLIQUE": {
+  "forme": "cyclique",
+  "titre": "Cycle",
+  "existe": true,
+  "homonymie": true
+ },
+ "CYGNE": {
+  "forme": "cygne",
+  "titre": "Cygne",
+  "existe": true,
+  "homonymie": false
+ },
+ "DATTIER": {
+  "forme": "dattier",
+  "titre": "Phoenix dactylifera",
+  "existe": true,
+  "homonymie": false
+ },
+ "DAUPHIN": {
+  "forme": "dauphin",
+  "titre": "Dauphin",
+  "existe": true,
+  "homonymie": false
+ },
+ "DECHIRER": {
+  "forme": "déchirer",
+  "titre": "Déchirer",
+  "existe": false,
+  "homonymie": false
+ },
+ "DELUGE": {
+  "forme": "déluge",
+  "titre": "Déluge",
+  "existe": true,
+  "homonymie": false
+ },
+ "DEMEURE": {
+  "forme": "demeure",
+  "titre": "Demeure",
+  "existe": true,
+  "homonymie": true
+ },
+ "DENIER": {
+  "forme": "denier",
+  "titre": "Denier",
+  "existe": true,
+  "homonymie": true
+ },
+ "DENT": {
+  "forme": "dent",
+  "titre": "Dent",
+  "existe": true,
+  "homonymie": false
+ },
+ "DESCENTE": {
+  "forme": "descente",
+  "titre": "Descente",
+  "existe": true,
+  "homonymie": true
+ },
+ "DETERGENT": {
+  "forme": "détergent",
+  "titre": "Détergent",
+  "existe": true,
+  "homonymie": false
+ },
+ "DEVISE": {
+  "forme": "devise",
+  "titre": "Devise",
+  "existe": true,
+  "homonymie": true
+ },
+ "DEVORER": {
+  "forme": "dévorer",
+  "titre": "Dévorer",
+  "existe": false,
+  "homonymie": false
+ },
+ "DIABLE": {
+  "forme": "diable",
+  "titre": "Diable",
+  "existe": true,
+  "homonymie": false
+ },
+ "DIGESTION": {
+  "forme": "digestion",
+  "titre": "Digestion",
+  "existe": true,
+  "homonymie": false
+ },
+ "DIONYSOS": {
+  "forme": "Dionysos",
+  "titre": "Dionysos",
+  "existe": true,
+  "homonymie": false
+ },
+ "DIURNE": {
+  "forme": "diurne",
+  "titre": "Diurne",
+  "existe": true,
+  "homonymie": true
+ },
+ "DOREE": {
+  "forme": "doré",
+  "titre": "Doré",
+  "existe": true,
+  "homonymie": true
+ },
+ "DRAGON": {
+  "forme": "dragon",
+  "titre": "Dragon",
+  "existe": true,
+  "homonymie": false
+ },
+ "DON QUICHOTTE": {
+  "forme": "Don Quichotte",
+  "titre": "Don Quichotte",
+  "existe": true,
+  "homonymie": false
+ },
+ "DRAME": {
+  "forme": "drame",
+  "titre": "Drame",
+  "existe": true,
+  "homonymie": true
+ },
+ "DYADE": {
+  "forme": "dyade",
+  "titre": "Dyade",
+  "existe": true,
+  "homonymie": true
+ },
+ "EAU": {
+  "forme": "eau",
+  "titre": "Eau",
+  "existe": true,
+  "homonymie": false
+ },
+ "ECHELLE": {
+  "forme": "échelle",
+  "titre": "Échelle",
+  "existe": true,
+  "homonymie": true
+ },
+ "ECHO": {
+  "forme": "écho",
+  "titre": "Écho",
+  "existe": true,
+  "homonymie": true
+ },
+ "ECREVISSE": {
+  "forme": "écrevisse",
+  "titre": "Écrevisse",
+  "existe": true,
+  "homonymie": false
+ },
+ "EDEN": {
+  "forme": "Éden",
+  "titre": "Éden",
+  "existe": true,
+  "homonymie": false
+ },
+ "EGLISE": {
+  "forme": "église",
+  "titre": "Église",
+  "existe": true,
+  "homonymie": true
+ },
+ "EGOUT": {
+  "forme": "égout",
+  "titre": "Égout",
+  "existe": true,
+  "homonymie": false
+ },
+ "ELEMENTS": {
+  "forme": "élément",
+  "titre": "Élément",
+  "existe": true,
+  "homonymie": true
+ },
+ "ELEVATION": {
+  "forme": "élévation",
+  "titre": "Élévation",
+  "existe": true,
+  "homonymie": true
+ },
+ "ELEVER": {
+  "forme": "élever",
+  "titre": "Élevage",
+  "existe": true,
+  "homonymie": false
+ },
+ "EMBOITEMENT": {
+  "forme": "emboîtement",
+  "titre": "Emboîtements",
+  "existe": true,
+  "homonymie": false
+ },
+ "ENCEINTE": {
+  "forme": "enceinte",
+  "titre": "Enceinte",
+  "existe": true,
+  "homonymie": true
+ },
+ "ENSEVELIR": {
+  "forme": "ensevelir",
+  "titre": "Ensevelir",
+  "existe": false,
+  "homonymie": false
+ },
+ "EPEE": {
+  "forme": "épée",
+  "titre": "Épée",
+  "existe": true,
+  "homonymie": false
+ },
+ "EPINGLE": {
+  "forme": "épingle",
+  "titre": "Épingle",
+  "existe": true,
+  "homonymie": false
+ },
+ "ESCALIER": {
+  "forme": "escalier",
+  "titre": "Escalier",
+  "existe": true,
+  "homonymie": false
+ },
+ "ESCARGOT": {
+  "forme": "escargot",
+  "titre": "Escargot",
+  "existe": true,
+  "homonymie": false
+ },
+ "ESPACE": {
+  "forme": "espace",
+  "titre": "Espace",
+  "existe": true,
+  "homonymie": true
+ },
+ "ESTOMAC": {
+  "forme": "estomac",
+  "titre": "Estomac",
+  "existe": true,
+  "homonymie": false
+ },
+ "ETHER": {
+  "forme": "éther",
+  "titre": "Éther",
+  "existe": true,
+  "homonymie": true
+ },
+ "EUPHEMISME": {
+  "forme": "euphémisme",
+  "titre": "Euphémisme",
+  "existe": true,
+  "homonymie": false
+ },
+ "EVE": {
+  "forme": "Ève",
+  "titre": "Ève",
+  "existe": true,
+  "homonymie": false
+ },
+ "EXCISION": {
+  "forme": "excision",
+  "titre": "Excision",
+  "existe": true,
+  "homonymie": false
+ },
+ "EXCREMENT": {
+  "forme": "excrement",
+  "titre": "Excrément",
+  "existe": true,
+  "homonymie": false
+ },
+ "FAUCILLE": {
+  "forme": "faucille",
+  "titre": "Faucille",
+  "existe": true,
+  "homonymie": false
+ },
+ "FEMINITE": {
+  "forme": "féminité",
+  "titre": "Féminité",
+  "existe": true,
+  "homonymie": false
+ },
+ "FEMME": {
+  "forme": "femme",
+  "titre": "Femme",
+  "existe": true,
+  "homonymie": false
+ },
+ "FEU": {
+  "forme": "feu",
+  "titre": "Feu",
+  "existe": true,
+  "homonymie": false
+ },
+ "FIGUIER": {
+  "forme": "figuier",
+  "titre": "Ficus carica",
+  "existe": true,
+  "homonymie": false
+ },
+ "FIL": {
+  "forme": "fil",
+  "titre": "Fil",
+  "existe": true,
+  "homonymie": true
+ },
+ "FILS": {
+  "forme": "fils",
+  "titre": "Fils",
+  "existe": true,
+  "homonymie": true
+ },
+ "FLAGELLATION": {
+  "forme": "flagellation",
+  "titre": "Flagellation",
+  "existe": true,
+  "homonymie": false
+ },
+ "FOUET": {
+  "forme": "fouet",
+  "titre": "Fouet",
+  "existe": true,
+  "homonymie": true
+ },
+ "FLECHE": {
+  "forme": "flèche",
+  "titre": "Flèche",
+  "existe": true,
+  "homonymie": true
+ },
+ "FLEUR": {
+  "forme": "fleur",
+  "titre": "Fleur",
+  "existe": true,
+  "homonymie": false
+ },
+ "FLORAL": {
+  "forme": "floral",
+  "titre": "Floral (Saskatchewan)",
+  "existe": true,
+  "homonymie": false
+ },
+ "FLOTTER": {
+  "forme": "flotter",
+  "titre": "Flotter",
+  "existe": false,
+  "homonymie": false
+ },
+ "FORET": {
+  "forme": "forêt",
+  "titre": "Forêt",
+  "existe": true,
+  "homonymie": false
+ },
+ "FORGER": {
+  "forme": "forger",
+  "titre": "Forger",
+  "existe": false,
+  "homonymie": false
+ },
+ "FOUDRE": {
+  "forme": "foudre",
+  "titre": "Foudre",
+  "existe": true,
+  "homonymie": false
+ },
+ "FOURMILLEMENT": {
+  "forme": "fourmillement",
+  "titre": "Paresthésie",
+  "existe": true,
+  "homonymie": false
+ },
+ "FRICTION": {
+  "forme": "friction",
+  "titre": "Frottement",
+  "existe": true,
+  "homonymie": false
+ },
+ "FRONT": {
+  "forme": "front",
+  "titre": "Front",
+  "existe": true,
+  "homonymie": true
+ },
+ "FROTTEMENT": {
+  "forme": "frottement",
+  "titre": "Frottement",
+  "existe": true,
+  "homonymie": false
+ },
+ "FRUIT": {
+  "forme": "fruit",
+  "titre": "Fruit",
+  "existe": true,
+  "homonymie": true
+ },
+ "FICTION": {
+  "forme": "fiction",
+  "titre": "Fiction",
+  "existe": true,
+  "homonymie": false
+ },
+ "FUGITIF": {
+  "forme": "fugitif",
+  "titre": "Fugitif",
+  "existe": false,
+  "homonymie": false
+ },
+ "FUITE": {
+  "forme": "fuite",
+  "titre": "Fuite",
+  "existe": true,
+  "homonymie": true
+ },
+ "FUSEAU": {
+  "forme": "fuseau",
+  "titre": "Fuseau",
+  "existe": true,
+  "homonymie": true
+ },
+ "GARGANTUA": {
+  "forme": "Gargantua",
+  "titre": "Gargantua",
+  "existe": true,
+  "homonymie": false
+ },
+ "GEANT": {
+  "forme": "géant",
+  "titre": "Géant",
+  "existe": true,
+  "homonymie": true
+ },
+ "GEOMETRIE": {
+  "forme": "géométrie",
+  "titre": "Géométrie",
+  "existe": true,
+  "homonymie": false
+ },
+ "GESTATION": {
+  "forme": "gestation",
+  "titre": "Gestation",
+  "existe": true,
+  "homonymie": false
+ },
+ "GIGANTISATION": {
+  "forme": "gigantisation",
+  "titre": "Gigantisation",
+  "existe": false,
+  "homonymie": false
+ },
+ "GLAIVE": {
+  "forme": "glaive",
+  "titre": "Glaive",
+  "existe": true,
+  "homonymie": false
+ },
+ "GOUFFRE": {
+  "forme": "gouffre",
+  "titre": "Gouffre",
+  "existe": true,
+  "homonymie": false
+ },
+ "GRAIN": {
+  "forme": "grain",
+  "titre": "Grain",
+  "existe": true,
+  "homonymie": true
+ },
+ "GRENIER": {
+  "forme": "grenier",
+  "titre": "Grenier",
+  "existe": true,
+  "homonymie": false
+ },
+ "GRAINE": {
+  "forme": "graine",
+  "titre": "Graine",
+  "existe": true,
+  "homonymie": false
+ },
+ "GRENOUILLE": {
+  "forme": "grenouille",
+  "titre": "Grenouille",
+  "existe": true,
+  "homonymie": false
+ },
+ "GROTTE": {
+  "forme": "grotte",
+  "titre": "Grotte",
+  "existe": true,
+  "homonymie": false
+ },
+ "GROUILLER": {
+  "forme": "grouiller",
+  "titre": "Grouiller",
+  "existe": false,
+  "homonymie": false
+ },
+ "GUEULE": {
+  "forme": "gueule",
+  "titre": "Gueule",
+  "existe": true,
+  "homonymie": true
+ },
+ "GULLIVER": {
+  "forme": "Gulliver",
+  "titre": "Gulliver",
+  "existe": true,
+  "homonymie": true
+ },
+ "HARMONIQUE": {
+  "forme": "harmonique",
+  "titre": "Harmonique",
+  "existe": true,
+  "homonymie": true
+ },
+ "HARMONIE": {
+  "forme": "harmonie",
+  "titre": "Harmonie",
+  "existe": true,
+  "homonymie": false
+ },
+ "HARPE": {
+  "forme": "harpe",
+  "titre": "Harpe",
+  "existe": true,
+  "homonymie": false
+ },
+ "HAUT": {
+  "forme": "haut",
+  "titre": "Haut de vêtement",
+  "existe": true,
+  "homonymie": false
+ },
+ "HERAKLES": {
+  "forme": "Héraclès",
+  "titre": "Héraclès",
+  "existe": true,
+  "homonymie": false
+ },
+ "HERBE": {
+  "forme": "herbe",
+  "titre": "Herbe",
+  "existe": true,
+  "homonymie": false
+ },
+ "HERCULE": {
+  "forme": "Hercule",
+  "titre": "Héraclès",
+  "existe": true,
+  "homonymie": false
+ },
+ "HIBOUX": {
+  "forme": "hibou",
+  "titre": "Hibou",
+  "existe": true,
+  "homonymie": false
+ },
+ "HISTOIRE": {
+  "forme": "histoire",
+  "titre": "Histoire",
+  "existe": true,
+  "homonymie": false
+ },
+ "HOTTE": {
+  "forme": "hotte",
+  "titre": "Hotte",
+  "existe": true,
+  "homonymie": true
+ },
+ "HYDRE": {
+  "forme": "hydre",
+  "titre": "Hydre",
+  "existe": true,
+  "homonymie": true
+ },
+ "ICARE": {
+  "forme": "Icare",
+  "titre": "Icare",
+  "existe": true,
+  "homonymie": false
+ },
+ "ILE": {
+  "forme": "île",
+  "titre": "Île",
+  "existe": true,
+  "homonymie": false
+ },
+ "INCINERATION": {
+  "forme": "incinération",
+  "titre": "Incinération",
+  "existe": true,
+  "homonymie": true
+ },
+ "INITIATION": {
+  "forme": "initiation",
+  "titre": "Initiation",
+  "existe": true,
+  "homonymie": false
+ },
+ "INSECTE": {
+  "forme": "insecte",
+  "titre": "Insecte",
+  "existe": true,
+  "homonymie": false
+ },
+ "INSULAIRE": {
+  "forme": "insulaire",
+  "titre": "Insularité",
+  "existe": true,
+  "homonymie": false
+ },
+ "INTESTIN": {
+  "forme": "intestin",
+  "titre": "Intestin",
+  "existe": true,
+  "homonymie": false
+ },
+ "INTIMITE": {
+  "forme": "intimité",
+  "titre": "Intimité",
+  "existe": true,
+  "homonymie": false
+ },
+ "INVERSION": {
+  "forme": "inversion",
+  "titre": "Inversion",
+  "existe": true,
+  "homonymie": true
+ },
+ "JAGUAR": {
+  "forme": "jaguar",
+  "titre": "Jaguar",
+  "existe": true,
+  "homonymie": false
+ },
+ "JARDIN": {
+  "forme": "jardin",
+  "titre": "Jardin",
+  "existe": true,
+  "homonymie": false
+ },
+ "JASON": {
+  "forme": "Jason",
+  "titre": "Jason",
+  "existe": true,
+  "homonymie": false
+ },
+ "JOUG": {
+  "forme": "joug",
+  "titre": "Joug",
+  "existe": true,
+  "homonymie": false
+ },
+ "JOUR": {
+  "forme": "jour",
+  "titre": "Jour",
+  "existe": true,
+  "homonymie": false
+ },
+ "JUMEAU": {
+  "forme": "jumeau",
+  "titre": "Jumeau",
+  "existe": true,
+  "homonymie": false
+ },
+ "JUMENT": {
+  "forme": "jument",
+  "titre": "Jument",
+  "existe": true,
+  "homonymie": false
+ },
+ "JUPITER": {
+  "forme": "Jupiter",
+  "titre": "Jupiter",
+  "existe": true,
+  "homonymie": true
+ },
+ "KRONOS": {
+  "forme": "Cronos",
+  "titre": "Cronos",
+  "existe": true,
+  "homonymie": false
+ },
+ "LABYRINTHE": {
+  "forme": "labyrinthe",
+  "titre": "Labyrinthe",
+  "existe": true,
+  "homonymie": false
+ },
+ "LAIT": {
+  "forme": "lait",
+  "titre": "Lait",
+  "existe": true,
+  "homonymie": false
+ },
+ "LAMPE": {
+  "forme": "lampe",
+  "titre": "Lampe",
+  "existe": true,
+  "homonymie": false
+ },
+ "LANCE": {
+  "forme": "lance",
+  "titre": "Lance",
+  "existe": true,
+  "homonymie": false
+ },
+ "LAPIN": {
+  "forme": "lapin",
+  "titre": "Lapin",
+  "existe": true,
+  "homonymie": false
+ },
+ "LARME": {
+  "forme": "larme",
+  "titre": "Larme",
+  "existe": true,
+  "homonymie": false
+ },
+ "LARVE": {
+  "forme": "larve",
+  "titre": "Larve",
+  "existe": true,
+  "homonymie": false
+ },
+ "LAVAGE": {
+  "forme": "lavage",
+  "titre": "Lavage",
+  "existe": true,
+  "homonymie": false
+ },
+ "LAVER": {
+  "forme": "laver",
+  "titre": "Laver",
+  "existe": false,
+  "homonymie": false
+ },
+ "LEVIATHAN": {
+  "forme": "Léviathan",
+  "titre": "Léviathan",
+  "existe": true,
+  "homonymie": false
+ },
+ "LEZARD": {
+  "forme": "lézard",
+  "titre": "Lézard",
+  "existe": true,
+  "homonymie": false
+ },
+ "LIAGE": {
+  "forme": "liage",
+  "titre": "Liage",
+  "existe": false,
+  "homonymie": false
+ },
+ "LIEN": {
+  "forme": "lien",
+  "titre": "Lien",
+  "existe": true,
+  "homonymie": true
+ },
+ "LIEVRE": {
+  "forme": "lièvre",
+  "titre": "Lièvre",
+  "existe": true,
+  "homonymie": false
+ },
+ "LION": {
+  "forme": "lion",
+  "titre": "Lion",
+  "existe": true,
+  "homonymie": false
+ },
+ "LITOTE": {
+  "forme": "litote",
+  "titre": "Litote",
+  "existe": true,
+  "homonymie": false
+ },
+ "LIVRE": {
+  "forme": "livre",
+  "titre": "Livre",
+  "existe": true,
+  "homonymie": false
+ },
+ "LOGOS": {
+  "forme": "logos",
+  "titre": "Logos",
+  "existe": true,
+  "homonymie": false
+ },
+ "LOTUS": {
+  "forme": "lotus",
+  "titre": "Lotus",
+  "existe": true,
+  "homonymie": true
+ },
+ "LOUP": {
+  "forme": "loup",
+  "titre": "Canis lupus",
+  "existe": true,
+  "homonymie": false
+ },
+ "LUCIFER": {
+  "forme": "Lucifer",
+  "titre": "Lucifer",
+  "existe": true,
+  "homonymie": false
+ },
+ "LUMIERE": {
+  "forme": "lumière",
+  "titre": "Lumière",
+  "existe": true,
+  "homonymie": false
+ },
+ "LUNE": {
+  "forme": "lune",
+  "titre": "Lune",
+  "existe": true,
+  "homonymie": false
+ },
+ "LUNAIRE": {
+  "forme": "lunaire",
+  "titre": "Lunaire",
+  "existe": true,
+  "homonymie": false
+ },
+ "MAIN": {
+  "forme": "main",
+  "titre": "Main",
+  "existe": true,
+  "homonymie": false
+ },
+ "MAIS": {
+  "forme": "maïs",
+  "titre": "Maïs",
+  "existe": true,
+  "homonymie": false
+ },
+ "MAISON": {
+  "forme": "maison",
+  "titre": "Maison",
+  "existe": true,
+  "homonymie": false
+ },
+ "MAMELLE": {
+  "forme": "mamelle",
+  "titre": "Mamelle",
+  "existe": true,
+  "homonymie": false
+ },
+ "MANDALA": {
+  "forme": "mandala",
+  "titre": "Mandala",
+  "existe": true,
+  "homonymie": false
+ },
+ "MANTEAU": {
+  "forme": "manteau",
+  "titre": "Manteau",
+  "existe": true,
+  "homonymie": true
+ },
+ "MANTRA": {
+  "forme": "mantra",
+  "titre": "Mantra",
+  "existe": true,
+  "homonymie": false
+ },
+ "MARIAGE": {
+  "forme": "mariage",
+  "titre": "Mariage",
+  "existe": true,
+  "homonymie": false
+ },
+ "MARS": {
+  "forme": "mars",
+  "titre": "Mars",
+  "existe": true,
+  "homonymie": true
+ },
+ "MEDIATEUR": {
+  "forme": "médiateur",
+  "titre": "Médiateur",
+  "existe": true,
+  "homonymie": true
+ },
+ "MELODIE": {
+  "forme": "mélodie",
+  "titre": "Mélodie",
+  "existe": true,
+  "homonymie": false
+ },
+ "MAYA": {
+  "forme": "maya",
+  "titre": "Maya",
+  "existe": true,
+  "homonymie": true
+ },
+ "MENBRANE": {
+  "forme": "membrane",
+  "titre": "Membrane",
+  "existe": true,
+  "homonymie": true
+ },
+ "MENSTRUES": {
+  "forme": "menstrues",
+  "titre": "Menstruation",
+  "existe": true,
+  "homonymie": false
+ },
+ "MER": {
+  "forme": "mer",
+  "titre": "Mer",
+  "existe": true,
+  "homonymie": false
+ },
+ "MERE": {
+  "forme": "mère",
+  "titre": "Mère",
+  "existe": true,
+  "homonymie": false
+ },
+ "MESSIE": {
+  "forme": "Messie",
+  "titre": "Messie",
+  "existe": true,
+  "homonymie": false
+ },
+ "MIEL": {
+  "forme": "miel",
+  "titre": "Miel",
+  "existe": true,
+  "homonymie": false
+ },
+ "MINERVE": {
+  "forme": "Minerve",
+  "titre": "Minerve",
+  "existe": true,
+  "homonymie": true
+ },
+ "MIROIR": {
+  "forme": "miroir",
+  "titre": "Miroir",
+  "existe": true,
+  "homonymie": false
+ },
+ "MONSTRE": {
+  "forme": "monstre",
+  "titre": "Monstre",
+  "existe": true,
+  "homonymie": false
+ },
+ "MONTAGNE": {
+  "forme": "montagne",
+  "titre": "Montagne",
+  "existe": true,
+  "homonymie": false
+ },
+ "MONTER": {
+  "forme": "monter",
+  "titre": "Antoni Chruściel",
+  "existe": true,
+  "homonymie": false
+ },
+ "MOTOCYCLETTE": {
+  "forme": "motocyclette",
+  "titre": "Moto",
+  "existe": true,
+  "homonymie": false
+ },
+ "MOULIN": {
+  "forme": "moulin",
+  "titre": "Moulin",
+  "existe": true,
+  "homonymie": false
+ },
+ "MUGIR": {
+  "forme": "mugir",
+  "titre": "Mugir",
+  "existe": false,
+  "homonymie": false
+ },
+ "MUR": {
+  "forme": "mur",
+  "titre": "Mur",
+  "existe": true,
+  "homonymie": false
+ },
+ "MULTICOULEUR": {
+  "forme": "multicouleur",
+  "titre": "Multicouleur",
+  "existe": false,
+  "homonymie": false
+ },
+ "MURAILLE": {
+  "forme": "muraille",
+  "titre": "Muraille",
+  "existe": true,
+  "homonymie": false
+ },
+ "MUSIQUE": {
+  "forme": "musique",
+  "titre": "Musique",
+  "existe": true,
+  "homonymie": false
+ },
+ "MUTILATION": {
+  "forme": "mutilation",
+  "titre": "Mutilation",
+  "existe": true,
+  "homonymie": false
+ },
+ "MYSTIQUE": {
+  "forme": "mystique",
+  "titre": "Mystique",
+  "existe": true,
+  "homonymie": false
+ },
+ "MYTHE": {
+  "forme": "mythe",
+  "titre": "Mythe",
+  "existe": true,
+  "homonymie": false
+ },
+ "NACELLE": {
+  "forme": "nacelle",
+  "titre": "Nacelle",
+  "existe": true,
+  "homonymie": true
+ },
+ "NAIN": {
+  "forme": "nain",
+  "titre": "Nain",
+  "existe": true,
+  "homonymie": true
+ },
+ "NARCISSE": {
+  "forme": "Narcisse",
+  "titre": "Narcisse",
+  "existe": true,
+  "homonymie": true
+ },
+ "NAUSICAA": {
+  "forme": "Nausicaa",
+  "titre": "Nausicaa",
+  "existe": true,
+  "homonymie": false
+ },
+ "NAVIGATION": {
+  "forme": "navigation",
+  "titre": "Navigation",
+  "existe": true,
+  "homonymie": false
+ },
+ "NEF": {
+  "forme": "nef",
+  "titre": "Nef",
+  "existe": true,
+  "homonymie": false
+ },
+ "NEGATION": {
+  "forme": "négation",
+  "titre": "Négation",
+  "existe": true,
+  "homonymie": true
+ },
+ "NID": {
+  "forme": "nid",
+  "titre": "Nid",
+  "existe": true,
+  "homonymie": false
+ },
+ "NOCES": {
+  "forme": "noces",
+  "titre": "Noce (mariage)",
+  "existe": true,
+  "homonymie": false
+ },
+ "NOIR": {
+  "forme": "noir",
+  "titre": "Noir",
+  "existe": true,
+  "homonymie": false
+ },
+ "NOIX": {
+  "forme": "noix",
+  "titre": "Noix",
+  "existe": true,
+  "homonymie": false
+ },
+ "NOMBRE": {
+  "forme": "nombre",
+  "titre": "Nombre",
+  "existe": true,
+  "homonymie": false
+ },
+ "NOURRITURE": {
+  "forme": "nourriture",
+  "titre": "Nourriture",
+  "existe": true,
+  "homonymie": false
+ },
+ "NUIT": {
+  "forme": "nuit",
+  "titre": "Nuit",
+  "existe": true,
+  "homonymie": false
+ },
+ "NYMPHE": {
+  "forme": "nymphe",
+  "titre": "Nymphe",
+  "existe": true,
+  "homonymie": false
+ },
+ "OGRE": {
+  "forme": "ogre",
+  "titre": "Ogre",
+  "existe": true,
+  "homonymie": false
+ },
+ "OISEAU": {
+  "forme": "oiseau",
+  "titre": "Oiseau",
+  "existe": true,
+  "homonymie": false
+ },
+ "OMBRE": {
+  "forme": "ombre",
+  "titre": "Ombre",
+  "existe": true,
+  "homonymie": false
+ },
+ "ONDE": {
+  "forme": "onde",
+  "titre": "Onde",
+  "existe": true,
+  "homonymie": false
+ },
+ "ONDULER": {
+  "forme": "onduler",
+  "titre": "Onduler",
+  "existe": false,
+  "homonymie": false
+ },
+ "OR": {
+  "forme": "or",
+  "titre": "Or",
+  "existe": true,
+  "homonymie": false
+ },
+ "OREILLE": {
+  "forme": "oreille",
+  "titre": "Oreille",
+  "existe": true,
+  "homonymie": false
+ },
+ "ORGIASTIQUE": {
+  "forme": "orgiastique",
+  "titre": "Orgiastique",
+  "existe": false,
+  "homonymie": false
+ },
+ "ORPHEE": {
+  "forme": "Orphée",
+  "titre": "Orphée",
+  "existe": true,
+  "homonymie": false
+ },
+ "OS": {
+  "forme": "os",
+  "titre": "Os",
+  "existe": true,
+  "homonymie": false
+ },
+ "OSIRIS": {
+  "forme": "Osiris",
+  "titre": "Osiris",
+  "existe": true,
+  "homonymie": false
+ },
+ "OSTEOLOGIE": {
+  "forme": "ostéologie",
+  "titre": "Ostéologie",
+  "existe": true,
+  "homonymie": false
+ },
+ "OURANIEN": {
+  "forme": "ouranien",
+  "titre": "Divinités grecques chthoniennes",
+  "existe": true,
+  "homonymie": false
+ },
+ "OURANOS": {
+  "forme": "Ouranos",
+  "titre": "Ouranos",
+  "existe": true,
+  "homonymie": false
+ },
+ "OURS": {
+  "forme": "ours",
+  "titre": "Ursidae",
+  "existe": true,
+  "homonymie": false
+ },
+ "PALAIS": {
+  "forme": "palais",
+  "titre": "Palais",
+  "existe": true,
+  "homonymie": false
+ },
+ "PALMIER": {
+  "forme": "palmier",
+  "titre": "Arecaceae",
+  "existe": true,
+  "homonymie": false
+ },
+ "PANDORE": {
+  "forme": "Pandore",
+  "titre": "Pandore",
+  "existe": true,
+  "homonymie": false
+ },
+ "PAPILLON": {
+  "forme": "papillon",
+  "titre": "Lepidoptera",
+  "existe": true,
+  "homonymie": false
+ },
+ "PARADIS": {
+  "forme": "paradis",
+  "titre": "Paradis",
+  "existe": true,
+  "homonymie": false
+ },
+ "PAROLES": {
+  "forme": "paroles",
+  "titre": "Paroles",
+  "existe": true,
+  "homonymie": false
+ },
+ "PARC": {
+  "forme": "parc",
+  "titre": "Parc",
+  "existe": true,
+  "homonymie": false
+ },
+ "PASSEUR": {
+  "forme": "passeur",
+  "titre": "Passeur",
+  "existe": true,
+  "homonymie": true
+ },
+ "PATERNEL": {
+  "forme": "paternel",
+  "titre": "Père",
+  "existe": true,
+  "homonymie": false
+ },
+ "PAUME": {
+  "forme": "paume",
+  "titre": "Paume",
+  "existe": true,
+  "homonymie": false
+ },
+ "PAYSAGE": {
+  "forme": "paysage",
+  "titre": "Paysage",
+  "existe": true,
+  "homonymie": false
+ },
+ "PECHEUR": {
+  "forme": "pêcheur",
+  "titre": "Pêcheur",
+  "existe": true,
+  "homonymie": false
+ },
+ "PENETRER": {
+  "forme": "pénétrer",
+  "titre": "Pénétrer",
+  "existe": false,
+  "homonymie": false
+ },
+ "PERCUTANT": {
+  "forme": "percutant",
+  "titre": "Percutant",
+  "existe": false,
+  "homonymie": false
+ },
+ "PERE": {
+  "forme": "père",
+  "titre": "Père",
+  "existe": true,
+  "homonymie": false
+ },
+ "PERSEPHONE": {
+  "forme": "Perséphone",
+  "titre": "Perséphone",
+  "existe": true,
+  "homonymie": false
+ },
+ "PESANTEUR": {
+  "forme": "pesanteur",
+  "titre": "Pesanteur",
+  "existe": true,
+  "homonymie": false
+ },
+ "PHALLIQUE": {
+  "forme": "phallique",
+  "titre": "Phallus",
+  "existe": true,
+  "homonymie": false
+ },
+ "PHALLUS": {
+  "forme": "phallus",
+  "titre": "Phallus",
+  "existe": true,
+  "homonymie": false
+ },
+ "PHOENIX": {
+  "forme": "phénix",
+  "titre": "Phénix",
+  "existe": true,
+  "homonymie": false
+ },
+ "PIERRE": {
+  "forme": "pierre",
+  "titre": "Pierre",
+  "existe": true,
+  "homonymie": true
+ },
+ "PLANTE": {
+  "forme": "plante",
+  "titre": "Plante",
+  "existe": true,
+  "homonymie": false
+ },
+ "PLURIEL": {
+  "forme": "pluriel",
+  "titre": "Pluriel",
+  "existe": true,
+  "homonymie": false
+ },
+ "POISSON": {
+  "forme": "poisson",
+  "titre": "Poisson",
+  "existe": true,
+  "homonymie": false
+ },
+ "POLIR": {
+  "forme": "polir",
+  "titre": "Polissage",
+  "existe": true,
+  "homonymie": false
+ },
+ "PONT": {
+  "forme": "pont",
+  "titre": "Pont",
+  "existe": true,
+  "homonymie": false
+ },
+ "PORTE": {
+  "forme": "porte",
+  "titre": "Porte",
+  "existe": true,
+  "homonymie": true
+ },
+ "POSEIDON": {
+  "forme": "Poséidon",
+  "titre": "Poséidon",
+  "existe": true,
+  "homonymie": false
+ },
+ "POSTURAL": {
+  "forme": "postural",
+  "titre": "Postural",
+  "existe": false,
+  "homonymie": false
+ },
+ "POTEAU": {
+  "forme": "poteau",
+  "titre": "Poteau",
+  "existe": true,
+  "homonymie": false
+ },
+ "PROFOND": {
+  "forme": "profond",
+  "titre": "Profondeur",
+  "existe": true,
+  "homonymie": true
+ },
+ "PROFONDEUR": {
+  "forme": "profondeur",
+  "titre": "Profondeur",
+  "existe": true,
+  "homonymie": true
+ },
+ "PROGRES": {
+  "forme": "progrès",
+  "titre": "Progrès",
+  "existe": true,
+  "homonymie": false
+ },
+ "PROMETHEE": {
+  "forme": "Prométhée",
+  "titre": "Prométhée",
+  "existe": true,
+  "homonymie": false
+ },
+ "PSYCHE": {
+  "forme": "Psyché",
+  "titre": "Psyché",
+  "existe": true,
+  "homonymie": true
+ },
+ "PUITS": {
+  "forme": "puits",
+  "titre": "Puits",
+  "existe": true,
+  "homonymie": true
+ },
+ "PUR": {
+  "forme": "pur",
+  "titre": "Pur",
+  "existe": true,
+  "homonymie": false
+ },
+ "PURIFICATEUR": {
+  "forme": "purificateur",
+  "titre": "Purificateur",
+  "existe": false,
+  "homonymie": false
+ },
+ "PURIFICATION": {
+  "forme": "purification",
+  "titre": "Purification",
+  "existe": true,
+  "homonymie": true
+ },
+ "PYTHON": {
+  "forme": "python",
+  "titre": "Python",
+  "existe": true,
+  "homonymie": true
+ },
+ "QUENOUILLE": {
+  "forme": "quenouille",
+  "titre": "Quenouille",
+  "existe": true,
+  "homonymie": false
+ },
+ "RA": {
+  "forme": "Râ",
+  "titre": "Rê",
+  "existe": true,
+  "homonymie": false
+ },
+ "RAHAB": {
+  "forme": "Rahab",
+  "titre": "Rahab",
+  "existe": true,
+  "homonymie": false
+ },
+ "RAT": {
+  "forme": "rat",
+  "titre": "Rat",
+  "existe": true,
+  "homonymie": false
+ },
+ "RAYON": {
+  "forme": "rayon",
+  "titre": "Rayon",
+  "existe": true,
+  "homonymie": true
+ },
+ "RECIPIENT": {
+  "forme": "récipient",
+  "titre": "Récipient",
+  "existe": true,
+  "homonymie": false
+ },
+ "REDOUBLEMENT": {
+  "forme": "redoublement",
+  "titre": "Redoublement",
+  "existe": true,
+  "homonymie": true
+ },
+ "REGIME": {
+  "forme": "régime",
+  "titre": "Régime",
+  "existe": true,
+  "homonymie": true
+ },
+ "REPETITION": {
+  "forme": "répétition",
+  "titre": "Répétition (arts du spectacle)",
+  "existe": true,
+  "homonymie": false
+ },
+ "REPTILE": {
+  "forme": "reptile",
+  "titre": "Reptiles",
+  "existe": true,
+  "homonymie": false
+ },
+ "RICHE": {
+  "forme": "riche",
+  "titre": "Richesse",
+  "existe": true,
+  "homonymie": false
+ },
+ "RICHESSE": {
+  "forme": "richesse",
+  "titre": "Richesse",
+  "existe": true,
+  "homonymie": false
+ },
+ "ROI": {
+  "forme": "roi",
+  "titre": "Roi",
+  "existe": true,
+  "homonymie": false
+ },
+ "ROMULUS": {
+  "forme": "Romulus",
+  "titre": "Romulus et Rémus",
+  "existe": true,
+  "homonymie": false
+ },
+ "ROND": {
+  "forme": "rond",
+  "titre": "Rond",
+  "existe": true,
+  "homonymie": true
+ },
+ "ROSE": {
+  "forme": "rose",
+  "titre": "Rose",
+  "existe": true,
+  "homonymie": true
+ },
+ "ROUE": {
+  "forme": "roue",
+  "titre": "Roue",
+  "existe": true,
+  "homonymie": false
+ },
+ "ROUELLE": {
+  "forme": "rouelle",
+  "titre": "Rouelle",
+  "existe": true,
+  "homonymie": true
+ },
+ "ROUET": {
+  "forme": "rouet",
+  "titre": "Rouet",
+  "existe": true,
+  "homonymie": true
+ },
+ "ROUGE-GORGE": {
+  "forme": "rouge-gorge",
+  "titre": "Rouge-gorge",
+  "existe": true,
+  "homonymie": false
+ },
+ "ROULOTTE": {
+  "forme": "roulotte",
+  "titre": "Roulotte",
+  "existe": true,
+  "homonymie": false
+ },
+ "ROYAL": {
+  "forme": "royal",
+  "titre": "Royal",
+  "existe": true,
+  "homonymie": true
+ },
+ "RUGISSEMENT": {
+  "forme": "rugissement",
+  "titre": "Rugissement",
+  "existe": true,
+  "homonymie": false
+ },
+ "RUNES": {
+  "forme": "runes",
+  "titre": "Rune",
+  "existe": true,
+  "homonymie": false
+ },
+ "RYTHME": {
+  "forme": "rythme",
+  "titre": "Rythme",
+  "existe": true,
+  "homonymie": false
+ },
+ "SACRIFICE": {
+  "forme": "sacrifice",
+  "titre": "Sacrifice",
+  "existe": true,
+  "homonymie": false
+ },
+ "SAGITTAIRE": {
+  "forme": "sagittaire",
+  "titre": "Sagittaire",
+  "existe": true,
+  "homonymie": true
+ },
+ "SALAMANDRE": {
+  "forme": "salamandre",
+  "titre": "Salamandre",
+  "existe": true,
+  "homonymie": true
+ },
+ "SAMSON": {
+  "forme": "Samson",
+  "titre": "Samson",
+  "existe": true,
+  "homonymie": false
+ },
+ "SANG": {
+  "forme": "sang",
+  "titre": "Sang",
+  "existe": true,
+  "homonymie": false
+ },
+ "SANGLIER": {
+  "forme": "sanglier",
+  "titre": "Sanglier",
+  "existe": true,
+  "homonymie": false
+ },
+ "SATAN": {
+  "forme": "Satan",
+  "titre": "Satan",
+  "existe": true,
+  "homonymie": false
+ },
+ "SATURNE": {
+  "forme": "Saturne",
+  "titre": "Saturne",
+  "existe": true,
+  "homonymie": true
+ },
+ "SAUTERELLE": {
+  "forme": "sauterelle",
+  "titre": "Sauterelle",
+  "existe": true,
+  "homonymie": true
+ },
+ "SCALP": {
+  "forme": "scalp",
+  "titre": "Scalp",
+  "existe": true,
+  "homonymie": true
+ },
+ "SCAPHANDRE": {
+  "forme": "scaphandre",
+  "titre": "Scaphandre",
+  "existe": true,
+  "homonymie": false
+ },
+ "SCARABEE": {
+  "forme": "scarabée",
+  "titre": "Scarabaeidae",
+  "existe": true,
+  "homonymie": false
+ },
+ "SCEPTRE": {
+  "forme": "sceptre",
+  "titre": "Sceptre",
+  "existe": true,
+  "homonymie": false
+ },
+ "SCHEME": {
+  "forme": "schème",
+  "titre": "Schème",
+  "existe": true,
+  "homonymie": true
+ },
+ "SCHIZOMORPHE": {
+  "forme": "schizomorphe",
+  "titre": "Schizomorphe",
+  "existe": false,
+  "homonymie": false
+ },
+ "SECHER": {
+  "forme": "sécher",
+  "titre": "Sécher",
+  "existe": false,
+  "homonymie": false
+ },
+ "SEIN": {
+  "forme": "sein",
+  "titre": "Sein",
+  "existe": true,
+  "homonymie": false
+ },
+ "SEL": {
+  "forme": "sel",
+  "titre": "Sel",
+  "existe": true,
+  "homonymie": true
+ },
+ "SEPULCRE": {
+  "forme": "sépulcre",
+  "titre": "Sépulcre",
+  "existe": true,
+  "homonymie": true
+ },
+ "SERPENT": {
+  "forme": "serpent",
+  "titre": "Serpentes",
+  "existe": true,
+  "homonymie": false
+ },
+ "SEXUEL": {
+  "forme": "sexuel",
+  "titre": "Sexe",
+  "existe": true,
+  "homonymie": false
+ },
+ "SILLON": {
+  "forme": "sillon",
+  "titre": "Sillon",
+  "existe": true,
+  "homonymie": true
+ },
+ "SILURE": {
+  "forme": "silure",
+  "titre": "Silure",
+  "existe": true,
+  "homonymie": false
+ },
+ "SIRENE": {
+  "forme": "sirène",
+  "titre": "Sirène",
+  "existe": true,
+  "homonymie": false
+ },
+ "SOLEIL": {
+  "forme": "soleil",
+  "titre": "Soleil",
+  "existe": true,
+  "homonymie": false
+ },
+ "SOURIS": {
+  "forme": "souris",
+  "titre": "Souris",
+  "existe": true,
+  "homonymie": false
+ },
+ "SPECTACULAIRE": {
+  "forme": "spectaculaire",
+  "titre": "Spectaculaire",
+  "existe": false,
+  "homonymie": false
+ },
+ "SPECTRE": {
+  "forme": "spectre",
+  "titre": "Spectre",
+  "existe": true,
+  "homonymie": true
+ },
+ "SPHYNX": {
+  "forme": "sphinx",
+  "titre": "Sphinx",
+  "existe": true,
+  "homonymie": false
+ },
+ "SPIRALE": {
+  "forme": "spirale",
+  "titre": "Spirale",
+  "existe": true,
+  "homonymie": false
+ },
+ "STATUE": {
+  "forme": "statue",
+  "titre": "Statue",
+  "existe": true,
+  "homonymie": false
+ },
+ "STRUCTURE": {
+  "forme": "structure",
+  "titre": "Structure",
+  "existe": true,
+  "homonymie": true
+ },
+ "SUBSTANCE": {
+  "forme": "substance",
+  "titre": "Substance",
+  "existe": true,
+  "homonymie": true
+ },
+ "SUC": {
+  "forme": "suc",
+  "titre": "Suc",
+  "existe": true,
+  "homonymie": true
+ },
+ "SUCCION": {
+  "forme": "succion",
+  "titre": "Succion",
+  "existe": false,
+  "homonymie": false
+ },
+ "SYMBOLE": {
+  "forme": "symbole",
+  "titre": "Symbole",
+  "existe": true,
+  "homonymie": false
+ },
+ "SYMETRIE": {
+  "forme": "symétrie",
+  "titre": "Symétrie",
+  "existe": true,
+  "homonymie": false
+ },
+ "SYNTHESE": {
+  "forme": "synthèse",
+  "titre": "Synthèse",
+  "existe": true,
+  "homonymie": true
+ },
+ "SYNTHETIQUE": {
+  "forme": "synthétique",
+  "titre": "Synthèse",
+  "existe": true,
+  "homonymie": true
+ },
+ "TAMBOUR": {
+  "forme": "tambour",
+  "titre": "Tambour",
+  "existe": true,
+  "homonymie": true
+ },
+ "TAPIR": {
+  "forme": "tapir",
+  "titre": "Tapir",
+  "existe": true,
+  "homonymie": false
+ },
+ "TAROT": {
+  "forme": "tarot",
+  "titre": "Tarot",
+  "existe": true,
+  "homonymie": false
+ },
+ "TARTARE": {
+  "forme": "tartare",
+  "titre": "Tartare",
+  "existe": true,
+  "homonymie": true
+ },
+ "TAUREAU": {
+  "forme": "taureau",
+  "titre": "Taureau",
+  "existe": true,
+  "homonymie": false
+ },
+ "TEINTURE": {
+  "forme": "teinture",
+  "titre": "Teinture",
+  "existe": true,
+  "homonymie": false
+ },
+ "TELLURIQUE": {
+  "forme": "tellurique",
+  "titre": "Tellurique",
+  "existe": false,
+  "homonymie": false
+ },
+ "TEMPLE": {
+  "forme": "temple",
+  "titre": "Temple",
+  "existe": true,
+  "homonymie": false
+ },
+ "TENEBRES": {
+  "forme": "ténèbres",
+  "titre": "Ténèbres",
+  "existe": true,
+  "homonymie": true
+ },
+ "TERRE": {
+  "forme": "terre",
+  "titre": "Terre",
+  "existe": true,
+  "homonymie": false
+ },
+ "TETE": {
+  "forme": "tête",
+  "titre": "Tête",
+  "existe": true,
+  "homonymie": true
+ },
+ "TETER": {
+  "forme": "téter",
+  "titre": "Téter",
+  "existe": false,
+  "homonymie": false
+ },
+ "TEXTILE": {
+  "forme": "textile",
+  "titre": "Textile",
+  "existe": true,
+  "homonymie": false
+ },
+ "THORR": {
+  "forme": "Thor",
+  "titre": "Thor",
+  "existe": true,
+  "homonymie": false
+ },
+ "TIGRE": {
+  "forme": "tigre",
+  "titre": "Tigre",
+  "existe": true,
+  "homonymie": false
+ },
+ "TISSAGE": {
+  "forme": "tissage",
+  "titre": "Tissage",
+  "existe": true,
+  "homonymie": false
+ },
+ "TISSER": {
+  "forme": "tisser",
+  "titre": "Tissage",
+  "existe": true,
+  "homonymie": false
+ },
+ "TOISON": {
+  "forme": "toison",
+  "titre": "Laine",
+  "existe": true,
+  "homonymie": false
+ },
+ "TOIT": {
+  "forme": "toit",
+  "titre": "Toit",
+  "existe": true,
+  "homonymie": false
+ },
+ "TOMBE": {
+  "forme": "tombe",
+  "titre": "Tombe",
+  "existe": true,
+  "homonymie": false
+ },
+ "TOMBEAU": {
+  "forme": "tombeau",
+  "titre": "Tombeau",
+  "existe": true,
+  "homonymie": true
+ },
+ "TONNERRE": {
+  "forme": "tonnerre",
+  "titre": "Tonnerre",
+  "existe": true,
+  "homonymie": false
+ },
+ "TRANCHEUR": {
+  "forme": "trancheur",
+  "titre": "Trancheur",
+  "existe": false,
+  "homonymie": false
+ },
+ "TRESOR": {
+  "forme": "trésor",
+  "titre": "Trésor",
+  "existe": true,
+  "homonymie": false
+ },
+ "TRIADE": {
+  "forme": "triade",
+  "titre": "Triade",
+  "existe": true,
+  "homonymie": true
+ },
+ "ULYSSE": {
+  "forme": "Ulysse",
+  "titre": "Ulysse",
+  "existe": true,
+  "homonymie": false
+ },
+ "ULCERE": {
+  "forme": "ulcère",
+  "titre": "Ulcère",
+  "existe": true,
+  "homonymie": false
+ },
+ "VACHE": {
+  "forme": "vache",
+  "titre": "Vache",
+  "existe": true,
+  "homonymie": false
+ },
+ "VASE": {
+  "forme": "vase",
+  "titre": "Vase",
+  "existe": true,
+  "homonymie": true
+ },
+ "VEGETAL": {
+  "forme": "végétal",
+  "titre": "Végétal",
+  "existe": true,
+  "homonymie": false
+ },
+ "VENTRE": {
+  "forme": "ventre",
+  "titre": "Abdomen",
+  "existe": true,
+  "homonymie": false
+ },
+ "VENUS": {
+  "forme": "Vénus",
+  "titre": "Vénus",
+  "existe": true,
+  "homonymie": true
+ },
+ "VER": {
+  "forme": "ver",
+  "titre": "Ver",
+  "existe": true,
+  "homonymie": false
+ },
+ "VERMINE": {
+  "forme": "vermine",
+  "titre": "Vermine",
+  "existe": true,
+  "homonymie": true
+ },
+ "VERT": {
+  "forme": "vert",
+  "titre": "Vert",
+  "existe": true,
+  "homonymie": false
+ },
+ "VERTICAL": {
+  "forme": "vertical",
+  "titre": "Vertical",
+  "existe": true,
+  "homonymie": true
+ },
+ "VERTIGE": {
+  "forme": "vertige",
+  "titre": "Vertige",
+  "existe": true,
+  "homonymie": false
+ },
+ "VETEMENT": {
+  "forme": "vêtement",
+  "titre": "Vêtement",
+  "existe": true,
+  "homonymie": false
+ },
+ "VILLE": {
+  "forme": "ville",
+  "titre": "Ville",
+  "existe": true,
+  "homonymie": false
+ },
+ "VIN": {
+  "forme": "vin",
+  "titre": "Vin",
+  "existe": true,
+  "homonymie": false
+ },
+ "VIPERE": {
+  "forme": "vipère",
+  "titre": "Viperinae",
+  "existe": true,
+  "homonymie": false
+ },
+ "VIRIL": {
+  "forme": "viril",
+  "titre": "Virilité",
+  "existe": true,
+  "homonymie": false
+ },
+ "VISCOSITE": {
+  "forme": "viscosité",
+  "titre": "Viscosité",
+  "existe": true,
+  "homonymie": false
+ },
+ "VISION": {
+  "forme": "vision",
+  "titre": "Vision",
+  "existe": true,
+  "homonymie": true
+ },
+ "VISQUEUX": {
+  "forme": "visqueux",
+  "titre": "Viscosité",
+  "existe": true,
+  "homonymie": false
+ },
+ "VOILE": {
+  "forme": "voile",
+  "titre": "Voile",
+  "existe": true,
+  "homonymie": true
+ },
+ "VOL": {
+  "forme": "vol",
+  "titre": "Vol",
+  "existe": true,
+  "homonymie": true
+ },
+ "VOYAGE": {
+  "forme": "voyage",
+  "titre": "Voyage",
+  "existe": true,
+  "homonymie": false
+ },
+ "VOYAGER": {
+  "forme": "voyager",
+  "titre": "Voyager",
+  "existe": true,
+  "homonymie": true
+ },
+ "VULCAIN": {
+  "forme": "Vulcain",
+  "titre": "Vulcain",
+  "existe": true,
+  "homonymie": true
+ },
+ "VULVE": {
+  "forme": "vulve",
+  "titre": "Vulve",
+  "existe": true,
+  "homonymie": false
+ },
+ "YAVEH": {
+  "forme": "Yahvé",
+  "titre": "Yahvé",
+  "existe": true,
+  "homonymie": false
+ },
+ "ZENITH": {
+  "forme": "zénith",
+  "titre": "Zénith",
+  "existe": true,
+  "homonymie": true
+ },
+ "ZEUS": {
+  "forme": "Zeus",
+  "titre": "Zeus",
+  "existe": true,
+  "homonymie": false
+ },
+ "ZODIAQUE": {
+  "forme": "zodiaque",
+  "titre": "Zodiaque",
+  "existe": true,
+  "homonymie": false
+ }
+}
