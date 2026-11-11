@@ -1,0 +1,27 @@
+{
+ "lignes_lues": 34074917,
+ "fr_fr": 3062789,
+ "liste": 2153913,
+ "mots_liste_trouves": 10056,
+ "relations": {
+  "Antonym": 11510,
+  "AtLocation": 3,
+  "DerivedFrom": 30855,
+  "DistinctFrom": 600,
+  "EtymologicallyDerivedFrom": 7,
+  "EtymologicallyRelatedTo": 4586,
+  "FormOf": 285143,
+  "HasContext": 157095,
+  "IsA": 33515,
+  "MadeOf": 4,
+  "MannerOf": 107,
+  "MotivatedByGoal": 4,
+  "PartOf": 5921,
+  "RelatedTo": 2452560,
+  "SimilarTo": 4592,
+  "Synonym": 76282,
+  "UsedFor": 5
+ },
+ "mots_liste": 10163,
+ "vecteurs": 10055
+}
