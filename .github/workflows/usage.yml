@@ -29,7 +29,7 @@ jobs:
           git commit -m "Usage JDM : $(cat resultats_usage/etat.json | tr -d '\n ')" || echo "Rien"
           for i in 1 2 3 4 5; do git pull --rebase && git push && break; sleep 9; done
   enrichir:
-    if: github.event_name == 'push'
+    if: github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     timeout-minutes: 300
     strategy:

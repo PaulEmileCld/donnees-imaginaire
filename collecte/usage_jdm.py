@@ -24,15 +24,19 @@ def get(nom):
         with urllib.request.urlopen(urllib.request.Request(u, headers=UA), timeout=120) as r: return json.loads(r.read().decode("utf-8"))
     except urllib.error.HTTPError as e: return None if e.code in (400, 404) else {"erreur": e.code}
     except Exception as e: return {"erreur": str(e)}
-termine = True
+termine = True; erreurs = {}; consecutives = 0
 try:
     for nom in sorted(LISTE, key=lambda m: int(infos[m]["rang"] or 99999)):
         if nom in cache: continue
         if time.time() - T0 > DUREE_MAX: raise TimeoutError
         d = get(nom)
         if d and "erreur" in d:
-            time.sleep(60); d = get(nom)
-            if d and "erreur" in d: raise TimeoutError
+            time.sleep(20); d = get(nom)
+        if d and "erreur" in d:          # mot en échec : on le note et on passe au suivant
+            erreurs[nom] = str(d["erreur"]); consecutives += 1
+            if consecutives >= 15: raise TimeoutError   # serveur vraiment indisponible : on reprendra plus tard
+            time.sleep(30); continue
+        consecutives = 0
         dedans, dehors = [], []
         if d:
             noms = {n["id"]: n for n in d.get("nodes", [])}
@@ -59,6 +63,6 @@ with open(f"{R}/liens_exterieurs.csv", "w", newline="", encoding="utf-8") as f:
     w = csv.writer(f); w.writerow(["Source", "Target", "Weight"])
     for m, e in cache.items():
         for c, p in e["out"]: w.writerow([m, c, p])
-etat = {"termine": termine, "mots": len(LISTE), "interroges": len(cache), "trouves": sum(e["trouve"] for e in cache.values()), "liens_internes": nb}
+etat = {"termine": termine, "mots": len(LISTE), "interroges": len(cache), "trouves": sum(e["trouve"] for e in cache.values()), "liens_internes": nb, "erreurs": len(erreurs), "exemples_erreurs": dict(list(erreurs.items())[:10])}
 json.dump(etat, open(f"{R}/etat.json", "w"), indent=1); print(etat)
-if termine: open(f"{R}/TERMINE", "w").write("ok")
+if termine and not erreurs: open(f"{R}/TERMINE", "w").write("ok")
