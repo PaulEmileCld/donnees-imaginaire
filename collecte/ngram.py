@@ -1,10 +1,10 @@
 """Fréquence des mots de Durand dans les livres français numérisés (Google Books Ngram, corpus français 2019).
 Adresse non officielle : on reste très lent et on s'arrête au premier refus."""
 import json, os, time, csv, urllib.request, urllib.parse
-from commun import mots_accentues
-R = "resultats_ngram"; os.makedirs(R, exist_ok=True)
+from commun import mots_a_traiter, dossier
+R = dossier("resultats_ngram"); os.makedirs(R, exist_ok=True)
 UA = "Mozilla/5.0 (compatible; donnees-imaginaire; +https://github.com/PaulEmileCld/donnees-imaginaire)"
-mots = mots_accentues(); lignes, etat = [], {"requetes": 0, "refus": 0, "corpus": None}
+mots = mots_a_traiter(); lignes, etat = [], {"requetes": 0, "refus": 0, "corpus": None}
 DEBUT, FIN = 1800, 2019
 for corpus in ["fr-2019", "fr"]:               # on garde le premier corpus qui répond
     lignes.clear(); etat.update(requetes=0, refus=0)
@@ -25,7 +25,7 @@ for corpus in ["fr-2019", "fr"]:               # on garde le premier corpus qui 
             if s.get("type") == "CASE_INSENSITIVE" or ng.endswith(" (All)") or not any(x.get("ngram", "").endswith(" (All)") for x in d):
                 mot = ng.replace(" (All)", "")
                 for k, v in enumerate(s["timeseries"]): lignes.append([mot, DEBUT + k, v])
-        time.sleep(8)
+        time.sleep(5)
     if lignes: etat["corpus"] = corpus; break
 with open(f"{R}/frequences.csv", "w", newline="", encoding="utf-8") as f:
     w = csv.writer(f); w.writerow(["mot", "annee", "frequence_relative"]); w.writerows(lignes)

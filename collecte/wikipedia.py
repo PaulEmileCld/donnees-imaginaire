@@ -1,7 +1,8 @@
 """Fréquentation quotidienne des articles de Wikipédia en français (depuis juillet 2015), pour chaque mot de Durand."""
 import json, os, time, csv, gzip, datetime, urllib.request, urllib.parse
-from commun import UA, mots_accentues
-R = "resultats_wikipedia"; os.makedirs(R, exist_ok=True)
+from commun import UA, mots_a_traiter, dossier
+MENSUEL = os.environ.get("MENSUEL") == "1"
+R = dossier("resultats_wikipedia"); os.makedirs(R, exist_ok=True)
 def get(url):
     for essai in range(3):
         try:
@@ -12,7 +13,7 @@ def get(url):
             time.sleep(5 * (essai + 1))
         except Exception: time.sleep(5 * (essai + 1))
     return None
-mots = mots_accentues(); titres = {}
+mots = mots_a_traiter(); titres = {}
 for i in range(0, len(mots), 40):        # 1. retrouver le titre réel de l'article (redirections, homonymies)
     lot = mots[i:i + 40]
     q = "|".join(f[0].upper() + f[1:] for _, f in lot)
@@ -31,12 +32,13 @@ lignes, mensuel = [], {}
 for m, info in titres.items():               # 2. fréquentation quotidienne (visiteurs humains seulement)
     if not info["existe"]: continue
     t = urllib.parse.quote(info["titre"].replace(" ", "_"), safe="")
-    d = get(f"https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/fr.wikipedia/all-access/user/{t}/daily/2015070100/{fin}00")
+    d = get(f"https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/fr.wikipedia/all-access/user/{t}/{'monthly' if MENSUEL else 'daily'}/2015070100/{fin}00")
     for it in (d or {}).get("items", []):
         jour = it["timestamp"][:8]; lignes.append([info["forme"], jour, it["views"]])
         mensuel[(info["forme"], jour[:6])] = mensuel.get((info["forme"], jour[:6]), 0) + it["views"]
-    time.sleep(0.3)
-with gzip.open(f"{R}/vues_quotidiennes.csv.gz", "wt", newline="", encoding="utf-8") as f:
+    time.sleep(0.2)
+if not MENSUEL:
+  with gzip.open(f"{R}/vues_quotidiennes.csv.gz", "wt", newline="", encoding="utf-8") as f:
     w = csv.writer(f); w.writerow(["mot", "jour", "vues"]); w.writerows(lignes)
 with open(f"{R}/vues_mensuelles.csv", "w", newline="", encoding="utf-8") as f:
     w = csv.writer(f); w.writerow(["mot", "mois", "vues"]); w.writerows([[a, b, v] for (a, b), v in sorted(mensuel.items())])
