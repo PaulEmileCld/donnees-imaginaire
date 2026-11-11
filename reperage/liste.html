@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JeuxDeMots : listes des fichiers</title>
+</head>
+<body>
+    <h1>JeuxDeMots : listes de fichiers t&eacute;l&eacute;chargeables</h1>
+     <?
+	 
+		function extract_relation_id_from_filename($filename) {
+			$tag = '-LEXICALNET-JEUXDEMOTS-R';
+			$pos = stripos($filename, $tag);
+		//	echo "<br>coucou1 = $pos";
+			if (!is_numeric($pos)) {return null;}
+			if (is_numeric($pos)) {
+				$number = substr($filename, $pos+strlen($tag));
+				$pos2 = stripos($number, '.txt');
+			//	echo "<br>coucou2 = $pos2";
+				if (!is_numeric($pos2)) {return null;}
+				$number = substr($number, 0, $pos2);
+				return $number;
+			}
+		}
+	 
+		// Fonction pour formater la taille du fichier en unités plus conviviales
+		function FileSizeConvert($bytes) {
+			$size = array('o','ko','Mo','Go','To','PB','Eo','Zo','Yo');
+			$factor = floor((strlen($bytes) - 1) / 3);
+			return round($bytes / pow(1024, $factor), 2) . ' ' . @$size[$factor];
+		}
+		$repertoire = __DIR__;
+		
+		// Récupère la liste des fichiers dans le répertoire courant
+		$files = scandir($repertoire);
+
+		// Exclut les répertoires "." et ".."
+		$files = array_diff($files, array('.', '..', 'index.php'));
+
+		rsort($files);
+		
+		
+		$LR_ar = array();
+		$relist_filename = 'RELATION_LIST.txt';
+		$handle = fopen($relist_filename, 'r');
+		if ($handle) {
+			while (($ligne = fgets($handle)) !== false) {
+		//		echo 'LR_ar = ' . $ligne . "<br>";
+			if (trim($ligne) != '') {
+				$lar = explode (':', $ligne);
+				if (is_array($lar)) {$LR_ar[trim($lar[0])] = trim($lar[1]);}
+				}
+			}
+			fclose($handle);
+		}
+	//	print_r($LR_ar);
+
+		echo "\n<blockquote>";
+		// Affiche les liens de téléchargement pour chaque fichier
+		foreach ($files as $fichier) {
+			
+			    // Chemin complet du fichier
+				$cheminFichier = $repertoire . '/' . $fichier;
+				
+				if (is_dir($cheminFichier)) {continue;}
+				
+				// Taille du fichier en octets
+				$taille = filesize($cheminFichier);
+				// Formatage de la taille en Ko, Mo, Go, etc.
+				$tailleFormatee = FileSizeConvert($taille);
+	
+				$date = filemtime($cheminFichier);
+				$datef = date("F d Y H:i:s.", $date);
+	
+				$relid = extract_relation_id_from_filename($fichier);
+				$com = '';
+				if (is_numeric($relid)) {
+					if (isset($LR_ar[$relid])) {
+					/// $relname = get_relation_name
+						$com = " - fichier de la relation '{$LR_ar[$relid]}' ($relid) ";
+					}
+				}
+				
+				echo "\n <br><a href=\"{$fichier}\" download> {$fichier} </a>  - {$datef} - {$tailleFormatee} $com ";
+		}
+		echo "\n</blockquote>";	 
+	 ?>
+</body>
+</html>

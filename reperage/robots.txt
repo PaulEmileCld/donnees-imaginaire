@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /tmp/
+Disallow: *.log
+Disallow: /*.log$
+Disallow: /cgi-bin/
+Crawl-delay: 60
