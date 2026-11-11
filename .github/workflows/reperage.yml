@@ -1,0 +1,29 @@
+name: Repérage JeuxDeMots
+on:
+  push:
+    paths: ['.github/workflows/reperage.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  reperage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Lire robots.txt, README et liste des fichiers
+        run: |
+          mkdir -p reperage
+          UA="donnees-imaginaire (projet personnel de cartographie)"
+          curl -sSL -A "$UA" https://www.jeuxdemots.org/robots.txt -o reperage/robots.txt || true
+          curl -sSL -A "$UA" https://www.jeuxdemots.org/JDM-LEXICALNET-FR/ -o reperage/liste.html || true
+          curl -sSL -A "$UA" https://jdm-api.demo.lirmm.fr/schema -o reperage/api-schema.txt || true
+          README=$(grep -oiE 'href="[^"]*README[^"]*"' reperage/liste.html | head -1 | sed -E 's/href="([^"]*)"/\1/')
+          if [ -n "$README" ]; then curl -sSL -A "$UA" "https://www.jeuxdemots.org/JDM-LEXICALNET-FR/$README" -o reperage/README.txt || true; fi
+          ls -la reperage
+      - name: Enregistrer dans le dépôt
+        run: |
+          git config user.name "collecte-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add reperage
+          git commit -m "Repérage des données JeuxDeMots" || echo "Rien à enregistrer"
+          git push
