@@ -37,6 +37,9 @@ label.op{display:flex;gap:6px;align-items:center;font-size:13px;color:var(--doux
 <div class="fiche" id="fiche"><span style="color:var(--doux)">Clique sur un point pour voir à quoi les joueurs de JeuxDeMots l'associent.</span></div>
 <label class="op"><input type="checkbox" id="durand">Calque Durand : montrer ses mots</label>
 <label class="op"><input type="checkbox" id="prop" checked>Propagation à deux pas</label>
+<div class="titre2">Mots affichés : <span id="nv"></span></div>
+<input type="range" id="budget" min="500" step="250" style="width:100%;margin-top:6px">
+<div style="font-size:11.5px;color:var(--doux)">Les plus pertinents d'abord (fréquence et nombre de liens). Réglé automatiquement selon l'appareil ; tu peux le changer. La recherche trouve tous les mots, même ceux qui ne sont pas affichés.</div>
 <div class="titre2">Couleur</div>
 <select id="mode" style="margin-top:6px">
  <option value="c">Communautés de sens</option>
@@ -60,27 +63,34 @@ function teinte(m,v){if(v===null||v===undefined)return'#4a4d55';const[a,b,,,lo,h
  const c=t<.5?A.map((x,i)=>x+(G[i]-x)*t*2):G.map((x,i)=>x+(B[i]-x)*(t-.5)*2);return`rgb(${c.map(Math.round)})`}
 const INV=Array.from({length:N},()=>[]);D.nb.forEach((l,i)=>l.forEach(([j,v])=>INV[j].push(i)));
 const nbDu=D.du.reduce((a,b)=>a+b,0);
-document.getElementById('stats').textContent=`${N.toLocaleString('fr-FR')} mots parmi les plus usuels du français, reliés par ${D.stats[1].toLocaleString('fr-FR')} associations. ${nbDu} mots de Durand en calque.`;
+document.getElementById('stats').textContent=`${N.toLocaleString('fr-FR')} mots du français, reliés par ${D.stats[1].toLocaleString('fr-FR')} associations. ${nbDu} mots de Durand en calque.`;
 document.getElementById('mots').innerHTML=D.w.map(w=>`<option value="${w}">`).join('');
 const cv=document.getElementById('cv'),g=cv.getContext('2d');let W,H,ry=.4,rx=-.2,zm=1,tourne=true,drag=null,sel=-1,fam=-1,proj=[],mode='c',cal=false;
-const smax=Math.max(...D.s),TOP=[...D.s.keys()].sort((a,b)=>D.s[b]-D.s[a]).slice(0,60),TOPDU=[...D.s.keys()].filter(i=>D.du[i]).sort((a,b)=>D.s[b]-D.s[a]).slice(0,90);
+/* Nombre de mots affichés selon l'appareil, puis ajusté selon la vitesse réelle de dessin */
+const mobile=matchMedia('(pointer:coarse)').matches||innerWidth<820,coeurs=navigator.hardwareConcurrency||4,memoire=navigator.deviceMemory||4;
+let NV=Math.round((mobile?2500:6000)*(coeurs>=8?1.5:coeurs<=4?.75:1)*(memoire<=2?.5:memoire<=4?.8:1));NV=Math.max(500,Math.min(N,NV));
+let auto=true,mesures=[];const PLAFOND=Math.min(N,mobile?4000:15000); /* au-delà, la carte devient illisible plus que lente */
+const smax=Math.max(...D.s),TOP=[...D.s.keys()].slice(0,mobile?25:60),TOPDU=[...D.s.keys()].filter(i=>D.du[i]).sort((a,b)=>D.s[b]-D.s[a]).slice(0,90);
 function couleur(i){return mode==='c'?COL[D.c[i]]:teinte(mode,D[mode][i])}
 function taille(){const r=cv.getBoundingClientRect(),d=devicePixelRatio||1;W=r.width;H=r.height;cv.width=W*d;cv.height=H*d;g.setTransform(d,0,0,d,0,0)}
 function pr(p){const c=Math.cos(ry),s=Math.sin(ry),x=p[0]*c+p[2]*s,z=-p[0]*s+p[2]*c,c2=Math.cos(rx),s2=Math.sin(rx),y=p[1]*c2-z*s2,z2=p[1]*s2+z*c2,k=900/(900+z2),e=zm*Math.min(W,H)/620;return{x:W/2+x*k*e,y:H/2+y*k*e,k,z:z2}}
 function dessin(){
- g.clearRect(0,0,W,H);proj=D.x.map(pr);const ord=[...proj.keys()].sort((a,b)=>proj[b].z-proj[a].z);
+ g.clearRect(0,0,W,H);proj=D.x.map(pr);const t0=performance.now();const vis=i=>i<NV||(cal&&D.du[i])||i===sel;const ord=[...proj.keys()].filter(vis).sort((a,b)=>proj[b].z-proj[a].z);
  const act=new Map();if(sel>=0){act.set(sel,1);D.nb[sel].forEach(([j])=>act.set(j,Math.max(act.get(j)||0,.75)));if(document.getElementById('prop').checked)D.nb[sel].forEach(([j])=>D.nb[j].slice(0,4).forEach(([k])=>{if(!act.has(k))act.set(k,.4)}))}
  for(const i of ord){const p=proj[i],on=(fam<0||D.c[i]===fam)&&(sel<0||act.has(i))&&(!cal||D.du[i]||sel>=0);
   g.globalAlpha=on?(.45+.4*Math.min(1,p.k)):.05;g.fillStyle=couleur(i);const r=(.9+2.6*D.s[i]/smax)*p.k*Math.sqrt(zm)+(act.get(i)?1.5:0);
   g.beginPath();g.arc(p.x,p.y,r,0,6.283);g.fill();if(cal&&D.du[i]&&on){g.strokeStyle='#fff';g.lineWidth=1;g.stroke()}}
  g.globalAlpha=1;
- if(sel>=0){const a=proj[sel],mx=D.nb[sel][0]?D.nb[sel][0][1]:1;
+ if(sel>=0){if(!vis(sel)){}const a=proj[sel],mx=D.nb[sel][0]?D.nb[sel][0][1]:1;
   if(document.getElementById('prop').checked)D.nb[sel].forEach(([j])=>D.nb[j].slice(0,4).forEach(([k])=>{const b=proj[j],c=proj[k];g.strokeStyle='#f2a62344';g.lineWidth=.8;g.beginPath();g.moveTo(b.x,b.y);g.lineTo(c.x,c.y);g.stroke()}));
   D.nb[sel].forEach(([j,v])=>{const b=proj[j];g.strokeStyle='#f2a623';g.globalAlpha=.35+.65*v/mx;g.lineWidth=.6+4*v/mx;g.beginPath();g.moveTo(a.x,a.y);g.lineTo(b.x,b.y);g.stroke()});g.globalAlpha=1}
  g.font='500 12px IBM Plex Sans, sans-serif';g.textAlign='left';
  const lab=sel>=0?[...act.keys()].filter(i=>act.get(i)>=.75):(cal?TOPDU:TOP).filter(i=>fam<0||D.c[i]===fam);
- for(const i of lab){const p=proj[i];g.fillStyle=i===sel?'#f2a623':'#e9e6df';g.globalAlpha=i===sel?1:.85;g.fillText(D.w[i],p.x+6,p.y+4)}g.globalAlpha=1;
+ for(const i of lab){if(!vis(i)&&!act.has(i))continue;const p=proj[i];g.fillStyle=i===sel?'#f2a623':'#e9e6df';g.globalAlpha=i===sel?1:.85;g.fillText(D.w[i],p.x+6,p.y+4)}g.globalAlpha=1;ajuste(performance.now()-t0);
 }
+function ajuste(t){if(!auto)return;mesures.push(t);if(mesures.length<8)return;const m=mesures.reduce((a,b)=>a+b)/mesures.length;mesures=[];
+ if(m>35&&NV>800){NV=Math.round(NV*.7);majBudget()}else if(m<12&&NV<PLAFOND){NV=Math.min(PLAFOND,Math.round(NV*1.25));majBudget()}else auto=false}
+function majBudget(){const b=document.getElementById('budget');b.max=N;b.value=NV;document.getElementById('nv').textContent=`${NV.toLocaleString('fr-FR')} sur ${N.toLocaleString('fr-FR')}`}
 const fmt=(v,a,b)=>v===null||v===undefined?'—':v<-.2?a:v>.2?b:'entre les deux';
 function choisir(i){sel=i;tourne=false;const f=document.getElementById('fiche');if(i<0){f.innerHTML='<span style="color:var(--doux)">Clique sur un point pour voir à quoi les joueurs de JeuxDeMots l\'associent.</span>';dessin();return}
  const mx=D.nb[i][0]?D.nb[i][0][1]:1,inv=INV[i].slice(0,8).map(j=>D.w[j]);
@@ -94,12 +104,13 @@ document.getElementById('mode').onchange=e=>{mode=e.target.value;legende();dessi
 document.getElementById('durand').onchange=e=>{cal=e.target.checked;dessin()};
 document.getElementById('q').addEventListener('change',e=>{const v=e.target.value.trim(),i=IDX[v]??IDX[v.toLowerCase()];if(i!==undefined)choisir(i)});
 document.getElementById('prop').onchange=dessin;
-function proche(x,y){let b=-1,d=100;proj.forEach((p,i)=>{const q=(p.x-x)**2+(p.y-y)**2;if(q<d){d=q;b=i}});return b}
+document.getElementById('budget').oninput=e=>{auto=false;NV=+e.target.value;majBudget();dessin()};
+function proche(x,y){let b=-1,d=100;proj.forEach((p,i)=>{if(i>=NV&&!(cal&&D.du[i]))return;const q=(p.x-x)**2+(p.y-y)**2;if(q<d){d=q;b=i}});return b}
 let bouge=0;cv.addEventListener('pointerdown',e=>{drag=[e.clientX,e.clientY,ry,rx];bouge=0;cv.setPointerCapture(e.pointerId)});
 cv.addEventListener('pointermove',e=>{const r=cv.getBoundingClientRect(),bu=document.getElementById('bulle');if(drag){bouge+=Math.abs(e.movementX)+Math.abs(e.movementY);ry=drag[2]+(e.clientX-drag[0])*.007;rx=Math.max(-1.4,Math.min(1.4,drag[3]-(e.clientY-drag[1])*.007));tourne=false;dessin();bu.style.display='none';return}
  const i=proche(e.clientX-r.left,e.clientY-r.top);if(i>=0){bu.textContent=D.w[i];bu.style.left=e.clientX+12+'px';bu.style.top=e.clientY-10+'px';bu.style.display='block'}else bu.style.display='none'});
 cv.addEventListener('pointerup',e=>{drag=null;if(bouge<6){const r=cv.getBoundingClientRect();choisir(proche(e.clientX-r.left,e.clientY-r.top))}});
 cv.addEventListener('wheel',e=>{e.preventDefault();zm=Math.max(.5,Math.min(10,zm*(e.deltaY>0?.9:1.1)));dessin()},{passive:false});
-addEventListener('resize',()=>{taille();dessin()});taille();legende();dessin();
+addEventListener('resize',()=>{taille();dessin()});taille();legende();majBudget();dessin();
 setInterval(()=>{if(tourne){ry+=.0025;dessin()}},50);
 </script></body></html>
