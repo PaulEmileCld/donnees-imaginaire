@@ -1,7 +1,11 @@
 {
- "termine": false,
+ "termine": true,
  "mots": 10164,
- "interroges": 8711,
- "trouves": 8711,
- "liens_internes": 1184389
+ "interroges": 10163,
+ "trouves": 10163,
+ "liens_internes": 1279669,
+ "erreurs": 1,
+ "exemples_erreurs": {
+  "catamorphe": "500"
+ }
 }
