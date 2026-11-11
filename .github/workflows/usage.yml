@@ -1,0 +1,50 @@
+name: Carte par l'usage (10 000 mots)
+on:
+  push:
+    paths: ['collecte/usage_jdm.py', 'collecte/mots_usage.csv', '.github/workflows/usage.yml']
+  schedule:
+    - cron: '41 */6 * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  jeuxdemots:
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    concurrency: { group: usage-jdm, cancel-in-progress: false }
+    steps:
+      - uses: actions/checkout@v4
+      - id: fini
+        run: if [ -f resultats_usage/TERMINE ]; then echo "oui=1" >> $GITHUB_OUTPUT; fi
+      - uses: actions/setup-python@v5
+        if: steps.fini.outputs.oui != '1'
+        with: { python-version: '3.12' }
+      - if: steps.fini.outputs.oui != '1'
+        run: python collecte/usage_jdm.py
+      - name: Enregistrer
+        if: always() && steps.fini.outputs.oui != '1'
+        run: |
+          git config user.name "collecte-bot"; git config user.email "actions@users.noreply.github.com"
+          git add resultats_usage
+          git commit -m "Usage JDM : $(cat resultats_usage/etat.json | tr -d '\n ')" || echo "Rien"
+          for i in 1 2 3 4 5; do git pull --rebase && git push && break; sleep 9; done
+  enrichir:
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    strategy:
+      fail-fast: false
+      matrix:
+        script: [ngram, wikipedia]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: PYTHONPATH=collecte LISTE=collecte/mots_usage.txt SORTIE=resultats_usage_${{ matrix.script }} MENSUEL=1 python collecte/${{ matrix.script }}.py
+      - name: Enregistrer
+        if: always()
+        run: |
+          git config user.name "collecte-bot"; git config user.email "actions@users.noreply.github.com"
+          git add resultats_usage_${{ matrix.script }} || true
+          git commit -m "Usage ${{ matrix.script }} : $(cat resultats_usage_${{ matrix.script }}/etat.json 2>/dev/null | tr -d '\n ' | head -c 200)" || echo "Rien"
+          for i in 1 2 3 4 5; do git pull --rebase && git push && break; sleep 13; done
