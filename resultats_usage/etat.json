@@ -1,11 +1,11 @@
 {
- "termine": true,
- "mots": 10164,
- "interroges": 10163,
- "trouves": 10163,
- "liens_internes": 1279669,
+ "termine": false,
+ "mots": 30078,
+ "interroges": 20862,
+ "trouves": 20862,
+ "liens_internes": 2034378,
  "erreurs": 1,
  "exemples_erreurs": {
-  "catamorphe": "500"
+  "foreign office": "500"
  }
 }
