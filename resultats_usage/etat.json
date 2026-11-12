@@ -1,10 +1,10 @@
 {
- "termine": true,
+ "termine": false,
  "mots": 30078,
  "interroges": 30035,
  "trouves": 30035,
  "liens_internes": 2365763,
- "erreurs": 43,
+ "erreurs": 15,
  "exemples_erreurs": {
   "foreign office": "500",
   "richomme": "500",
