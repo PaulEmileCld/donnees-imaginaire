@@ -23,7 +23,9 @@ deg=np.asarray((S>0).sum(1)).ravel()
 freq=np.array([float(info[w]['freq_films'] or 0)+float(info[w]['freq_livres'] or 0) for w in names])
 dur=np.array([info[w]['durand']=='1' for w in names])
 ok=deg>=5
-cand=np.where(ok)[0]; top=cand[np.argsort(-freq[cand])][:6000]
+z=lambda v:(v-v.mean())/(v.std()+1e-9)
+pert=z(np.log1p(freq))+z(np.log1p(deg))  # pertinence : usage + nombre de liens
+cand=np.where(ok)[0]; top=cand[np.argsort(-pert[cand])][:15000]
 keep=np.array(sorted(set(top.tolist())|set(np.where(ok&dur)[0].tolist())))
 K=len(keep); print('affichés',K,'dont Durand',dur[keep].sum())
 Pk=P[keep][:,keep]
@@ -59,10 +61,12 @@ for r in list(wb.worksheets[0].iter_rows(values_only=True))[3:]:
     if r[0] and isinstance(r[4],(int,float)): val.setdefault(str(r[0]).strip().lower(),[]).append((float(r[4])-1)/6)
 # Wikipédia : total des vues
 vues=collections.Counter()
-for r in csv.DictReader(open(R+'resultats_usage_wikipedia/vues_mensuelles.csv',encoding='utf-8')): vues[r['mot']]+=int(r['vues'])
+import glob
+for f in glob.glob(R+'resultats_usage_wikipedia*/vues_mensuelles.csv'):
+    for r in csv.DictReader(open(f,encoding='utf-8')): vues[r['mot']]+=int(r['vues'])
 # Ngram : ancien (1800-1849) vs récent (1970-2019)
 anc=collections.Counter();rec=collections.Counter();kw=set(names[k] for k in keep)
-for r in csv.reader(open(R+'resultats_usage_ngram/frequences.csv',encoding='utf-8')):
+for r in (row for f in glob.glob(R+'resultats_usage_ngram*/frequences.csv*') for row in csv.reader(gzip.open(f,'rt',encoding='utf-8') if f.endswith('.gz') else open(f,encoding='utf-8'))):
     if r[0] not in kw: continue
     y=int(r[1]) if r[1].isdigit() else 0
     if 1800<=y<1850: anc[r[0]]+=float(r[2])
