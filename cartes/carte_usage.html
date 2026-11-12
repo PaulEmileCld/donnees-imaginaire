@@ -25,6 +25,8 @@ input[type=search],select{width:100%;padding:8px 10px;border-radius:6px;border:1
 .degrade{height:8px;border-radius:4px;margin:8px 0 2px}.bornes{display:flex;justify-content:space-between;font-size:11.5px;color:var(--doux)}
 .note{color:var(--doux);font-size:12px;margin-top:16px;border-top:1px solid var(--trait);padding-top:10px}
 .bulle{position:fixed;pointer-events:none;background:#000c;color:#fff;padding:3px 8px;border-radius:4px;font-size:13px;display:none}
+.reg{display:flex;justify-content:space-between;font-size:12.5px;color:var(--doux);margin-top:8px}.reg b{font-weight:500;color:var(--texte)}
+input[type=range]{width:100%}
 label.op{display:flex;gap:6px;align-items:center;font-size:13px;color:var(--doux);margin-top:10px}
 @media(max-width:820px){.app{grid-template-columns:1fr;grid-template-rows:62vh auto;height:auto}.cote{border-left:0;border-top:1px solid var(--trait)}}
 </style></head><body>
@@ -36,6 +38,11 @@ label.op{display:flex;gap:6px;align-items:center;font-size:13px;color:var(--doux
 <datalist id="mots"></datalist>
 <div class="fiche" id="fiche"><span style="color:var(--doux)">Clique sur un point pour voir à quoi les joueurs de JeuxDeMots l'associent.</span></div>
 <label class="op"><input type="checkbox" id="prop" checked>Propagation à deux pas</label>
+<div class="titre2">Liens</div>
+<div class="reg"><span>Liens par mot</span><b id="vk"></b></div><input type="range" id="lk" min="0" max="10" step="1" value="2">
+<div class="reg"><span>Épaisseur</span><b id="ve"></b></div><input type="range" id="le" min="0.1" max="4" step="0.1" value="0.6">
+<div class="reg"><span>Luminosité</span><b id="vl"></b></div><input type="range" id="ll" min="0.01" max="0.8" step="0.01" value="0.12">
+<select id="lc" style="margin-top:6px"><option value="com">Couleur de la communauté du mot de départ</option><option value="force">Selon la force du lien (faible → fort)</option><option value="#ffffff">Blanc</option><option value="#f2a623">Orange</option><option value="#7fb2ff">Bleu</option></select>
 <div class="titre2">Mots affichés : <span id="nv"></span></div>
 <input type="range" id="budget" min="500" step="250" style="width:100%;margin-top:6px">
 <div style="font-size:11.5px;color:var(--doux)">Les plus pertinents d'abord (fréquence et nombre de liens). Réglé automatiquement selon l'appareil ; tu peux le changer. La recherche trouve tous les mots, même ceux qui ne sont pas affichés.</div>
@@ -82,6 +89,16 @@ function pr(p){const c=Math.cos(ry),s=Math.sin(ry),x=p[0]*c+p[2]*s,z=-p[0]*s+p[2
 function dessin(){
  g.clearRect(0,0,W,H);proj=D.x.map(pr);const t0=performance.now();const vis=i=>i<NV||i===sel;const ord=[...proj.keys()].filter(vis).sort((a,b)=>proj[b].z-proj[a].z);
  const act=new Map();if(sel>=0){act.set(sel,1);D.nb[sel].forEach(([j])=>act.set(j,Math.max(act.get(j)||0,.75)));if(document.getElementById('prop').checked)D.nb[sel].forEach(([j])=>D.nb[j].slice(0,4).forEach(([k])=>{if(!act.has(k))act.set(k,.4)}))}
+ /* Liens : regroupés par couleur et épaisseur pour dessiner vite */
+ const LK=+document.getElementById('lk').value,LE=+document.getElementById('le').value,LL=+document.getElementById('ll').value,LC=document.getElementById('lc').value;
+ if(LK>0){const paquets=new Map();
+  for(const i of ord){if(fam>=0&&D.c[i]!==fam)continue;const l=D.nb[i],mx=l[0]?l[0][1]:1,a=proj[i];
+   for(let t=0;t<Math.min(LK,l.length);t++){const[j,v]=l[t];if(!vis(j))continue;const f=v/mx,ep=f>.66?2:f>.33?1:0;
+    const col=LC==='com'?COL[D.c[i]]:LC==='force'?['#3d5a99','#9a8a7a','#f2a623'][ep]:LC;const k=col+'|'+ep;
+    let p=paquets.get(k);if(!p){p=[];paquets.set(k,p)}const b=proj[j];p.push(a.x,a.y,b.x,b.y)}}
+  g.globalAlpha=sel>=0?LL*.3:LL;g.lineCap='round';
+  for(const[k,p]of paquets){const[col,ep]=k.split('|');g.strokeStyle=col;g.lineWidth=LE*(.45+.55*(+ep)/2);g.beginPath();for(let n=0;n<p.length;n+=4){g.moveTo(p[n],p[n+1]);g.lineTo(p[n+2],p[n+3])}g.stroke()}
+  g.globalAlpha=1}
  for(const i of ord){const p=proj[i],on=(fam<0||D.c[i]===fam)&&(sel<0||act.has(i));
   g.globalAlpha=on?(.45+.4*Math.min(1,p.k)):.05;g.fillStyle=couleur(i);const r=(.9+2.6*D.s[i]/smax)*p.k*Math.sqrt(zm)+(act.get(i)?1.5:0);
   g.beginPath();g.arc(p.x,p.y,r,0,6.283);g.fill()}
@@ -112,6 +129,8 @@ function majNiveau(){const n=D.niv[niveau];D.c=n.c;D.lab=n.lab;COL=D.lab.map((_,
 rs.oninput=e=>{niveau=+e.target.value;majNiveau()};
 document.getElementById('q').addEventListener('change',e=>{const v=e.target.value.trim(),i=IDX[v]??IDX[v.toLowerCase()];if(i!==undefined)choisir(i)});
 document.getElementById('prop').onchange=dessin;
+function majLiens(){document.getElementById('vk').textContent=document.getElementById('lk').value;document.getElementById('ve').textContent=document.getElementById('le').value;document.getElementById('vl').textContent=Math.round(100*document.getElementById('ll').value)+' %';dessin()}
+['lk','le','ll'].forEach(id=>document.getElementById(id).oninput=majLiens);document.getElementById('lc').onchange=dessin;
 document.getElementById('budget').oninput=e=>{auto=false;NV=+e.target.value;majBudget();dessin()};
 function proche(x,y){let b=-1,d=100;proj.forEach((p,i)=>{if(i>=NV)return;const q=(p.x-x)**2+(p.y-y)**2;if(q<d){d=q;b=i}});return b}
 let bouge=0;cv.addEventListener('pointerdown',e=>{drag=[e.clientX,e.clientY,ry,rx];bouge=0;cv.setPointerCapture(e.pointerId)});
@@ -119,6 +138,6 @@ cv.addEventListener('pointermove',e=>{const r=cv.getBoundingClientRect(),bu=docu
  const i=proche(e.clientX-r.left,e.clientY-r.top);if(i>=0){bu.textContent=D.w[i];bu.style.left=e.clientX+12+'px';bu.style.top=e.clientY-10+'px';bu.style.display='block'}else bu.style.display='none'});
 cv.addEventListener('pointerup',e=>{drag=null;if(bouge<6){const r=cv.getBoundingClientRect();choisir(proche(e.clientX-r.left,e.clientY-r.top))}});
 cv.addEventListener('wheel',e=>{e.preventDefault();zm=Math.max(.5,Math.min(10,zm*(e.deltaY>0?.9:1.1)));dessin()},{passive:false});
-addEventListener('resize',()=>{taille();dessin()});taille();majBudget();majNiveau();
+addEventListener('resize',()=>{taille();dessin()});taille();majBudget();majNiveau();majLiens();
 setInterval(()=>{if(tourne){ry+=.0025;dessin()}},50);
 </script></body></html>
