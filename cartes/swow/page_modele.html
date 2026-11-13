@@ -1,0 +1,78 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Carte réelle des associations de mots</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+:root{--fond:#14161b;--panneau:#1d2027;--trait:#353943;--texte:#e9e6df;--doux:#9a978f;--accent:#f2a623;--titre:"Fraunces",Georgia,serif;--police:"IBM Plex Sans",system-ui,sans-serif}
+*{box-sizing:border-box}html,body{margin:0;height:100%;background:var(--fond);color:var(--texte);font:14px/1.45 var(--police)}
+.app{display:grid;grid-template-columns:minmax(0,1fr) 320px;height:100vh}
+canvas{display:block;width:100%;height:100%;cursor:grab;touch-action:none}
+.cote{background:var(--panneau);border-left:1px solid var(--trait);padding:18px;overflow:auto}
+h1{font:600 22px/1.15 var(--titre);margin:0 0 4px}
+.sous{color:var(--doux);font-size:13px;margin:0 0 14px}
+input[type=search]{width:100%;padding:8px 10px;border-radius:6px;border:1px solid var(--trait);background:var(--fond);color:var(--texte);font:inherit}
+.fiche{margin:14px 0;padding:12px;border:1px solid var(--trait);border-radius:6px;min-height:60px}
+.fiche h2{font:600 20px var(--titre);margin:0 0 8px;color:var(--accent)}
+.assoc{display:grid;grid-template-columns:1fr auto;gap:2px 10px;font-size:13px}
+.assoc button{all:unset;cursor:pointer;color:var(--texte)}.assoc button:hover{color:var(--accent)}
+.bar{height:5px;background:var(--accent);border-radius:3px;margin-top:2px}
+.fam{display:grid;gap:4px;margin-top:8px}
+.fam button{all:unset;cursor:pointer;display:flex;gap:8px;align-items:center;font-size:12.5px;padding:3px 4px;border-radius:4px;color:var(--doux)}
+.fam button[aria-pressed=true]{background:#2a2e37;color:var(--texte)}
+.fam i{width:10px;height:10px;border-radius:50%;flex:none}
+.note{color:var(--doux);font-size:12px;margin-top:16px;border-top:1px solid var(--trait);padding-top:10px}
+.bulle{position:fixed;pointer-events:none;background:#000c;color:#fff;padding:3px 8px;border-radius:4px;font-size:13px;display:none}
+label.op{display:flex;gap:6px;align-items:center;font-size:13px;color:var(--doux);margin-top:10px}
+@media(max-width:800px){.app{grid-template-columns:1fr;grid-template-rows:60vh auto;height:auto}.cote{border-left:0;border-top:1px solid var(--trait)}}
+</style></head><body>
+<div class="app"><div style="position:relative"><canvas id="cv"></canvas></div>
+<div class="cote">
+<h1>Carte réelle des associations</h1>
+<p class="sous" id="stats"></p>
+<input type="search" id="q" placeholder="Chercher un mot (en anglais) : tree, mother, fire…" list="mots">
+<datalist id="mots"></datalist>
+<div class="fiche" id="fiche"><span style="color:var(--doux)">Clique sur un point pour voir à quoi les gens l'associent.</span></div>
+<label class="op"><input type="checkbox" id="prop" checked>Propagation à deux pas</label>
+<div style="margin-top:14px;font-weight:600">Communautés de sens</div>
+<div class="fam" id="fam"></div>
+<div class="note">Données : Small World of Words (De Deyne et al.), version préparée par NetSet, Télécom Paris. Position : profil d'associations de chaque mot (PPMI, SVD, t-SNE 3D). Couleur : communautés détectées par Louvain. Taille : nombre total de réponses. Seuls les 3 000 mots les plus reliés sont affichés.</div>
+</div></div><div class="bulle" id="bulle"></div>
+<script id="data" type="application/json">__DATA__</script>
+<script>
+const D=JSON.parse(document.getElementById('data').textContent);
+const COL=['#EF9F27','#5DCAA5','#378ADD','#ED93B1','#D85A30','#E24B4A','#97C459','#AFA9EC','#FAC775','#1D9E75','#85B7EB','#D4537E','#6b6a65'];
+const N=D.w.length,IDX={};D.w.forEach((w,i)=>IDX[w]=i);
+const INV=Array.from({length:N},()=>[]);D.nb.forEach((l,i)=>l.forEach(([j,v])=>INV[j].push(i)));
+document.getElementById('stats').textContent=`${D.stats[0].toLocaleString('fr-FR')} mots, ${D.stats[1].toLocaleString('fr-FR')} liens et ${D.stats[2].toLocaleString('fr-FR')} réponses humaines. Données en anglais.`;
+document.getElementById('mots').innerHTML=D.w.map(w=>`<option value="${w}">`).join('');
+const cv=document.getElementById('cv'),g=cv.getContext('2d');let W,H,ry=.4,rx=-.2,zm=1,tourne=true,drag=null,sel=-1,fam=-1,proj=[],survol=-1;
+const smax=Math.max(...D.s),TOP=[...D.s.keys()].sort((a,b)=>D.s[b]-D.s[a]).slice(0,70);
+function taille(){const r=cv.getBoundingClientRect(),d=devicePixelRatio||1;W=r.width;H=r.height;cv.width=W*d;cv.height=H*d;g.setTransform(d,0,0,d,0,0)}
+function pr(p){const c=Math.cos(ry),s=Math.sin(ry),x=p[0]*c+p[2]*s,z=-p[0]*s+p[2]*c,c2=Math.cos(rx),s2=Math.sin(rx),y=p[1]*c2-z*s2,z2=p[1]*s2+z*c2,k=900/(900+z2),e=zm*Math.min(W,H)/620;return{x:W/2+x*k*e,y:H/2+y*k*e,k,z:z2}}
+function dessin(){
+ g.clearRect(0,0,W,H);proj=D.x.map(pr);const ord=[...proj.keys()].sort((a,b)=>proj[b].z-proj[a].z);
+ const act=new Map();if(sel>=0){act.set(sel,1);D.nb[sel].forEach(([j,v])=>act.set(j,Math.max(act.get(j)||0,.75)));if(document.getElementById('prop').checked)D.nb[sel].forEach(([j])=>D.nb[j].slice(0,4).forEach(([k])=>{if(!act.has(k))act.set(k,.4)}))}
+ for(const i of ord){const p=proj[i],c=D.c[i],on=(fam<0||c===fam)&&(sel<0||act.has(i));g.globalAlpha=on?(.45+.4*Math.min(1,p.k)):.06;g.fillStyle=COL[c<0?12:Math.min(c,12)];g.beginPath();g.arc(p.x,p.y,(1+2.6*D.s[i]/smax)*p.k*Math.sqrt(zm)+(act.get(i)?1.5:0),0,6.283);g.fill()}
+ g.globalAlpha=1;
+ if(sel>=0){const a=proj[sel],mx=D.nb[sel][0]?D.nb[sel][0][1]:1;
+  if(document.getElementById('prop').checked)D.nb[sel].forEach(([j])=>D.nb[j].slice(0,4).forEach(([k,v])=>{const b=proj[j],c=proj[k];g.strokeStyle='#f2a62344';g.lineWidth=.8;g.beginPath();g.moveTo(b.x,b.y);g.lineTo(c.x,c.y);g.stroke()}));
+  D.nb[sel].forEach(([j,v])=>{const b=proj[j];g.strokeStyle='#f2a623';g.globalAlpha=.35+.65*v/mx;g.lineWidth=.6+4*v/mx;g.beginPath();g.moveTo(a.x,a.y);g.lineTo(b.x,b.y);g.stroke()});g.globalAlpha=1}
+ g.font='500 12px IBM Plex Sans, sans-serif';g.textAlign='left';
+ const lab=sel>=0?[...act.keys()].filter(i=>act.get(i)>=.75):TOP.filter(i=>fam<0||D.c[i]===fam);
+ for(const i of lab){const p=proj[i];g.fillStyle=i===sel?'#f2a623':'#e9e6df';g.globalAlpha=i===sel?1:.85;g.fillText(D.w[i],p.x+6,p.y+4)}g.globalAlpha=1;
+}
+function choisir(i){sel=i;tourne=false;const f=document.getElementById('fiche');if(i<0){f.innerHTML='<span style="color:var(--doux)">Clique sur un point pour voir à quoi les gens l\'associent.</span>';dessin();return}
+ const mx=D.nb[i][0]?D.nb[i][0][1]:1,inv=INV[i].slice(0,8).map(j=>D.w[j]);
+ f.innerHTML=`<h2>${D.w[i]}</h2><div style="color:var(--doux);font-size:12px;margin-bottom:8px">Réponses les plus fréquentes, en nombre de personnes</div><div class="assoc">${D.nb[i].map(([j,v])=>`<div><button data-i="${j}">${D.w[j]}</button><div class="bar" style="width:${Math.round(100*v/mx)}%"></div></div><span>${v}</span>`).join('')}</div>${inv.length?`<div style="color:var(--doux);font-size:12px;margin-top:10px">Mots qui y mènent : ${inv.join(', ')}</div>`:''}`;
+ f.querySelectorAll('button').forEach(b=>b.onclick=()=>choisir(+b.dataset.i));dessin()}
+const fb=document.getElementById('fam');D.lab.forEach((l,k)=>{const b=document.createElement('button');b.innerHTML=`<i style="background:${COL[k]}"></i>${l}`;b.setAttribute('aria-pressed','false');b.onclick=()=>{fam=fam===k?-1:k;fb.querySelectorAll('button').forEach((x,j)=>x.setAttribute('aria-pressed',j===fam));dessin()};fb.appendChild(b)});
+document.getElementById('q').addEventListener('change',e=>{const i=IDX[e.target.value.trim().toLowerCase()]??IDX[e.target.value.trim()];if(i!==undefined)choisir(i)});
+document.getElementById('prop').onchange=dessin;
+function proche(x,y){let b=-1,d=100;proj.forEach((p,i)=>{const q=(p.x-x)**2+(p.y-y)**2;if(q<d){d=q;b=i}});return b}
+let bouge=0;cv.addEventListener('pointerdown',e=>{drag=[e.clientX,e.clientY,ry,rx];bouge=0;cv.setPointerCapture(e.pointerId)});
+cv.addEventListener('pointermove',e=>{const r=cv.getBoundingClientRect(),bu=document.getElementById('bulle');if(drag){bouge+=Math.abs(e.movementX)+Math.abs(e.movementY);ry=drag[2]+(e.clientX-drag[0])*.007;rx=Math.max(-1.4,Math.min(1.4,drag[3]-(e.clientY-drag[1])*.007));tourne=false;dessin();bu.style.display='none';return}
+ const i=proche(e.clientX-r.left,e.clientY-r.top);if(i>=0){bu.textContent=D.w[i];bu.style.left=e.clientX+12+'px';bu.style.top=e.clientY-10+'px';bu.style.display='block'}else bu.style.display='none'});
+cv.addEventListener('pointerup',e=>{drag=null;if(bouge<6){const r=cv.getBoundingClientRect();choisir(proche(e.clientX-r.left,e.clientY-r.top))}});
+cv.addEventListener('wheel',e=>{e.preventDefault();zm=Math.max(.5,Math.min(8,zm*(e.deltaY>0?.9:1.1)));dessin()},{passive:false});
+addEventListener('resize',()=>{taille();dessin()});taille();dessin();
+setInterval(()=>{if(tourne){ry+=.0025;dessin()}},40);
+</script></body></html>
