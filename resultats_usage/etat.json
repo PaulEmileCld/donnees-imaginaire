@@ -1,20 +1,20 @@
 {
  "termine": false,
  "mots": 30078,
- "interroges": 30035,
- "trouves": 30035,
+ "interroges": 30036,
+ "trouves": 30036,
  "liens_internes": 2365763,
- "erreurs": 15,
+ "erreurs": 17,
  "exemples_erreurs": {
   "foreign office": "500",
   "richomme": "500",
-  "alloc": "500",
   "joli-joli": "500",
   "by night": "500",
   "moose": "500",
   "komintern": "500",
   "della francesca": "500",
   "ex-taulard": "500",
-  "charca": "500"
+  "charca": "500",
+  "moujahid": "500"
  }
 }
