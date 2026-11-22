@@ -4,7 +4,7 @@
  "interroges": 30036,
  "trouves": 30036,
  "liens_internes": 2365763,
- "erreurs": 17,
+ "erreurs": 15,
  "exemples_erreurs": {
   "foreign office": "500",
   "richomme": "500",
